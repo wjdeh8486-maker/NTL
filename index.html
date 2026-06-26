@@ -1773,6 +1773,33 @@
                 font-size: 0.8rem;
             }
         }
+        /* ===== ✅ 모든 이미지 자동 최적화 ===== */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+.equipment-image,
+.service-image,
+.product-image-box,
+.certification-image {
+    width: 100%;
+    height: auto;
+    overflow: visible;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.equipment-image img,
+.service-image img,
+.product-image-box img,
+.certification-image img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+}
     </style>
 </head>
 <body>
@@ -1909,7 +1936,7 @@
             <div class="equipment-grid">
                 <div class="equipment-item">
                     <div class="equipment-image">
-                        <img src="NTL5.jpg" alt="머시닝센터" style="width: 100%; height: 250px; object-fit: cover; border-radius: 12px;">
+                        <img src="NTL5.jpg" alt="머시닝센터" >
                     </div>
                     <div class="equipment-info">
                         <h4>정밀 머시닝</h4>
@@ -2018,7 +2045,7 @@
             <div class="equipment-grid">
                 <div class="equipment-item">
                     <div class="equipment-image">
-                        <img src="NTL6.jpg" alt="선반 및 밀링" style="width: 100%; height: 250px; object-fit: cover; border-radius: 12px;">
+                        <img src="NTL6.jpg" alt="선반 및 밀링" >
                     </div>
                     <div class="equipment-info">
                         <h4>선반 & 밀링</h4>
@@ -2047,7 +2074,7 @@
             <div class="equipment-grid-3">
                 <div class="equipment-item">
                     <div class="equipment-image">
-                        <img src="NTL7.jpg" alt="3차원 측정기" style="width: 100%; height: 200px; object-fit: cover; border-radius: 12px;">
+                        <img src="NTL7.jpg" alt="3차원 측정기" >
                     </div>
                     <div class="equipment-info">
                         <h4>3차원 측정기</h4>
@@ -2066,7 +2093,7 @@
 
                 <div class="equipment-item">
                     <div class="equipment-image">
-                        <img src="NTL8.jpg" alt="비접촉 측정기" style="width: 100%; height: 200px; object-fit: cover; border-radius: 12px;">
+                        <img src="NTL8.jpg" alt="비접촉 측정기" >
                     </div>
                     <div class="equipment-info">
                         <h4>비접촉 측정기</h4>
@@ -2085,7 +2112,7 @@
 
                 <div class="equipment-item">
                     <div class="equipment-image">
-                        <img src="NTL8.jpg" alt="누설 검사기" style="width: 100%; height: 200px; object-fit: cover; border-radius: 12px;">
+                        <img src="NTL8.jpg" alt="누설 검사기" >
                     </div>
                     <div class="equipment-info">
                         <h4>He Leak Detector</h4>
@@ -2121,13 +2148,13 @@
                 </div>
                 <div class="product-images-grid">
                     <div class="product-image-box">
-                        <img src="NTL8.jpg" alt="Chamber 1" style="width: 100%; height: 250px; object-fit: cover; border-radius: 12px; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);">
+                        <img src="NTL8.jpg" alt="Chamber 1" >
                     </div>
                     <div class="product-image-box">
-                        <img src="NTL9.jpg" alt="Chamber 2" style="width: 100%; height: 250px; object-fit: cover; border-radius: 12px; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);">
+                        <img src="NTL9.jpg" alt="Chamber 2" >
                     </div>
                     <div class="product-image-box">
-                        <img src="NTL10.jpg" alt="Chamber 3" style="width: 100%; height: 250px; object-fit: cover; border-radius: 12px; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);">
+                        <img src="NTL10.jpg" alt="Chamber 3" >
                     </div>
                 </div>
                 <p style="text-align: center; color: #2563eb; margin-top: 1.5rem; font-weight: 600;">알루미늄 부품: Chamber, Showerhead 등 정밀 가공 부품</p>
@@ -2140,13 +2167,13 @@
                 </div>
                 <div class="product-images-grid">
                     <div class="product-image-box">
-                        <img src="NTL11.jpg" alt="Shower Head 1" style="width: 100%; height: 250px; object-fit: cover; border-radius: 12px; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);">
+                        <img src="NTL11.jpg" alt="Shower Head 1" >
                     </div>
                     <div class="product-image-box">
-                        <img src="NTL12.jpg" alt="Shower Head 2" style="width: 100%; height: 250px; object-fit: cover; border-radius: 12px; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);">
+                        <img src="NTL12.jpg" alt="Shower Head 2">
                     </div>
                     <div class="product-image-box">
-                        <img src="NTL13.jpg" alt="Shower Head 3" style="width: 100%; height: 250px; object-fit: cover; border-radius: 12px; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);">
+                        <img src="NTL13.jpg" alt="Shower Head 3" >
                     </div>
                 </div>
                 <p style="text-align: center; color: #2563eb; margin-top: 1.5rem; font-weight: 600;">정밀 가공 부품: 다양한 사이즈 및 스펙의 Shower Head</p>
@@ -2164,13 +2191,13 @@
                 </div>
                 <div class="product-images-grid">
                     <div class="product-image-box">
-                        <img src="NTL14.jpg" alt="Welding Parts 1" style="width: 100%; height: 250px; object-fit: cover; border-radius: 12px; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);">
+                        <img src="NTL14.jpg" alt="Welding Parts 1" >
                     </div>
                     <div class="product-image-box">
-                        <img src="NTL15.jpg" alt="Welding Parts 2" style="width: 100%; height: 250px; object-fit: cover; border-radius: 12px; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);">
+                        <img src="NTL15.jpg" alt="Welding Parts 2">
                     </div>
                     <div class="product-image-box">
-                        <img src="NTL16.jpg" alt="Welding Parts 3" style="width: 100%; height: 250px; object-fit: cover; border-radius: 12px; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);">
+                        <img src="NTL16.jpg" alt="Welding Parts 3">
                     </div>
                 </div>
                 <p style="text-align: center; color: #2563eb; margin-top: 1.5rem; font-weight: 600;">고정밀 용접 부품 및 특수 산업용 부품</p>
@@ -2183,13 +2210,13 @@
                 </div>
                 <div class="product-images-grid">
                     <div class="product-image-box">
-                        <img src="NTL2.jpg" alt="Special Materials 1" style="width: 100%; height: 250px; object-fit: cover; border-radius: 12px; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);">
+                        <img src="NTL2.jpg" alt="Special Materials 1">
                     </div>
                     <div class="product-image-box">
-                        <img src="NTL3.jpg" alt="Special Materials 2" style="width: 100%; height: 250px; object-fit: cover; border-radius: 12px; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);">
+                        <img src="NTL3.jpg" alt="Special Materials 2" >
                     </div>
                     <div class="product-image-box">
-                        <img src="NTL4.jpg" alt="Special Materials 3" style="width: 100%; height: 250px; object-fit: cover; border-radius: 12px; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);">
+                        <img src="NTL4.jpg" alt="Special Materials 3" >
                     </div>
                 </div>
                 <p style="text-align: center; color: #2563eb; margin-top: 1.5rem; font-weight: 600;">스테인레스 및 다양한 특수 소재 가공 부품</p>
@@ -2241,7 +2268,7 @@
                 <h2 class="section-title" style="color: #141413;">상세 조직도</h2>
                 
                 <div style="display: flex; justify-content: center; margin-top: 3rem;">
-                    <img src="NTL18.png" alt="상세 조직도" style="max-width: 100%; height: auto; border-radius: 8px; box-shadow: 0 8px 24px rgba(20, 18, 21, 0.08);">
+                    <img src="NTL18.png" alt="상세 조직도" >
                 </div>
             </div>
 
@@ -2300,7 +2327,7 @@
                 </div>
                 <div class="certification-content-simple">
                     <div class="certification-image">
-                        <img src="NTL20.jpg" alt="ISO 9001:2015 품질경영시스템" style="width: 100%; height: 100%; object-fit: cover; border-radius: 8px;">
+                        <img src="NTL20.jpg" alt="ISO 9001:2015 품질경영시스템" >
                     </div>
                     <div class="certification-details-simple">
                         <div class="detail-item-simple">
@@ -2323,7 +2350,7 @@
                 </div>
                 <div class="certification-content-simple">
                     <div class="certification-image">
-                        <img src="NTL21.jpg" alt="ISO 14001 환경경영시스템" style="width: 100%; height: 100%; object-fit: cover; border-radius: 8px;">
+                        <img src="NTL21.jpg" alt="ISO 14001 환경경영시스템" >
                     </div>
                     <div class="certification-details-simple">
                         <div class="detail-item-simple">
@@ -2346,7 +2373,7 @@
                 </div>
                 <div class="certification-content-simple">
                     <div class="certification-image">
-                        <img src="NTL22.jpg" alt="위험성평가 인정서" style="width: 100%; height: 100%; object-fit: cover; border-radius: 8px;">
+                        <img src="NTL22.jpg" alt="위험성평가 인정서" >
                     </div>
                     <div class="certification-details-simple">
                         <div class="detail-item-simple">
@@ -2369,7 +2396,7 @@
                 </div>
                 <div class="certification-content-simple">
                     <div class="certification-image">
-                        <img src="NTL23.jpg" alt="ISO 45001 산업안전보건경영시스템" style="width: 100%; height: 100%; object-fit: cover; border-radius: 8px;">
+                        <img src="NTL23.jpg" alt="ISO 45001 산업안전보건경영시스템" >
                     </div>
                     <div class="certification-details-simple">
                         <div class="detail-item-simple">
@@ -2447,7 +2474,7 @@
                 <a href="#">사이트맵</a>
                 <a href="#">LinkedIn</a>
             </div>
-            <p>&copy; 2024 NTL(New Technology Leader). All rights reserved.</p>
+            <p>&copy; 2003 NTL(New Technology Leader). All rights reserved.</p>
             <p style="margin-top: 1rem; font-size: 0.95rem;">주식회사 엔티엘 | 경기도 화성시 신리 304-6, 양감면 대양리 768</p>
         </div>
     </footer>
