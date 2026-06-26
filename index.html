@@ -1,0 +1,2507 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NTL - New Technology Leader | 산업용 부품 전문 제조업체</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #faf9f5;
+            color: #141413;
+            line-height: 1.6;
+        }
+
+        /* ===== Header & Navigation ===== */
+        header {
+            position: sticky;
+            top: 0;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(59, 130, 246, 0.2);
+            z-index: 1000;
+            padding: 0;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+            max-width: 100%;
+            margin: 0;
+            gap: 2rem;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            height: 50px;
+            flex-shrink: 0;
+        }
+
+        .logo-icon {
+            display: none;
+        }
+
+        .logo-text {
+            display: flex;
+            flex-direction: column;
+            gap: 1px;
+            white-space: nowrap;
+        }
+
+        .logo-name {
+            font-size: 2rem;
+            font-weight: 900;
+            color: #141413;
+            letter-spacing: -0.5px;
+        }
+
+        .logo-slogan {
+            font-size: 0.8rem;
+            color: #2563eb;
+            font-weight: 700;
+            letter-spacing: 0.3px;
+            line-height: 1;
+        }
+
+        .logo::before {
+            display: none;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+            margin: 0;
+            flex: 1;
+            justify-content: center;
+        }
+
+        .nav-menu a {
+            text-decoration: none;
+            color: #3d3d3a;
+            font-size: 1rem;
+            font-weight: 600;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+
+        .nav-menu a:hover {
+            color: #2563eb;
+        }
+
+        .nav-menu a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 50%;
+            background: #2563eb;
+            transition: all 0.3s ease;
+            transform: translateX(-50%);
+        }
+
+        .nav-menu a:hover::after {
+            width: 100%;
+        }
+
+        .nav-contact {
+            text-decoration: none;
+            color: white;
+            background: linear-gradient(135deg, #2563eb 0%, #1e40af 100%);
+            padding: 0.7rem 1.5rem;
+            border-radius: 6px;
+            font-weight: 700;
+            font-size: 0.95rem;
+            transition: all 0.3s ease;
+            white-space: nowrap;
+            flex-shrink: 0;
+            border: 2px solid transparent;
+        }
+
+        .nav-contact:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+            border-color: #1e40af;
+        }
+
+        /* ===== Hero Section ===== */
+        .hero {
+            position: relative;
+            min-height: 100vh;
+            width: 100%;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #d0c5b8;
+            background-image: url('NTL0.jpg');
+            background-size: cover;
+            background-position: center center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            opacity: 1;
+            z-index: -1;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(ellipse at center, transparent 0%, rgba(0, 0, 0, 0.3) 100%);
+            z-index: 2;
+            pointer-events: none;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 10;
+            text-align: center;
+            max-width: 800px;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            font-weight: 900;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+            color: #141413;
+        }
+
+        .hero h1 .highlight {
+            background: #2563eb;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            color: #141413;
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+            font-weight: 600;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 1rem 2.5rem;
+            background: #2563eb;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 700;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(59, 130, 246, 0.3);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(59, 130, 246, 0.4);
+            border-color: #2563eb;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* ===== Section Styles ===== */
+        section {
+            padding: 3rem 2rem;
+            max-width: 100%;
+            margin: 0;
+        }
+
+        .section-title {
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin-bottom: 2rem;
+            text-align: center;
+            color: #141413;
+            letter-spacing: -1.4px;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 4px;
+            background: #2563eb;
+            margin: 1rem auto 0;
+        }
+
+        /* ===== About Section ===== */
+        .about {
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.5), rgba(219, 234, 254, 0.3));
+            padding: 3rem 2rem;
+            position: relative;
+            z-index: 100;
+            margin: 0;
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .about-text h3 {
+            font-size: 1.8rem;
+            color: #2563eb;
+            margin-bottom: 1rem;
+        }
+
+        .about-text p {
+            color: #3d3d3a;
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+        }
+
+        .about-features {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .feature-item {
+            display: flex;
+            gap: 1rem;
+            padding: 1rem;
+            background: rgba(224, 242, 254, 0.4);
+            border-left: 3px solid #2563eb;
+            border-radius: 8px;
+        }
+
+        .feature-item::before {
+            content: '✓';
+            color: #2563eb;
+            font-weight: bold;
+            font-size: 1.3rem;
+            flex-shrink: 0;
+        }
+
+        .feature-item span {
+            color: #141413;
+        }
+
+        .about-image {
+            position: relative;
+            height: 400px;
+            background: #e0e7ff;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: rgba(20, 18, 21, 0.12) 0px 12px 24px;
+            border: 2px solid rgba(37, 99, 235, 0.2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .about-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        /* ===== Philosophy Section ===== */
+        \.philosophy{
+            position: relative;
+            z-index: 100;
+            background: #f5f0e8;
+        }
+
+        .philosophy-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .philosophy-card {
+            background: linear-gradient(135deg, rgba(219, 234, 254, 0.4), rgba(37, 99, 235, 0.05));
+            padding: 2rem;
+            border-radius: 8px;
+            border: 1px solid rgba(230, 223, 216, 0.5);
+            transition: all 0.3s ease;
+        }
+
+        .philosophy-card:hover {
+            transform: translateY(-5px);
+            border-color: #2563eb;
+            box-shadow: 0 10px 30px rgba(219, 234, 254, 0.4);
+        }
+
+        .philosophy-card h4 {
+            font-size: 1.5rem;
+            color: #2563eb;
+            margin-bottom: 1rem;
+        }
+
+        .philosophy-card p {
+            color: #3d3d3a;
+            line-height: 1.8;
+        }
+
+        /* ===== Services Section ===== */
+        \.services{
+            position: relative;
+            z-index: 100;
+            background: linear-gradient(135deg, rgba(15, 20, 25, 0.5), rgba(37, 99, 235, 0.08));
+        }
+
+        .service-container {
+            margin-bottom: 4rem;
+            display: flex;
+            align-items: center;
+        }
+
+        .service-container.alternate .service-content {
+            flex-direction: row-reverse;
+        }
+
+        .service-content {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+            flex-direction: row;
+        }
+
+        .service-text {
+            flex: 1;
+            min-width: 400px;
+        }
+
+        .service-text h3 {
+            font-size: 3.5rem;
+            color: #2563eb;
+            font-weight: 800;
+            margin-bottom: 0.5rem;
+            letter-spacing: 1px;
+        }
+
+        .service-text > p {
+            font-size: 1.1rem;
+            color: #2563eb;
+            margin-bottom: 1.5rem;
+            font-weight: 600;
+        }
+
+        .service-description {
+            background: rgba(224, 242, 254, 0.4);
+            padding: 1.5rem;
+            border-left: 4px solid #2563eb;
+            border-radius: 8px;
+            margin-bottom: 1.5rem;
+        }
+
+        .service-description p {
+            color: #3d3d3a;
+            line-height: 1.8;
+            margin: 0;
+        }
+
+        .detail-link {
+            display: inline-block;
+            color: #2563eb;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.05rem;
+            transition: all 0.3s ease;
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+        }
+
+        .detail-link:hover {
+            background: rgba(224, 242, 254, 0.5);
+            transform: translateX(5px);
+        }
+
+        .service-image {
+            flex: 1;
+            min-width: 300px;
+            overflow: hidden;
+            border-radius: 12px;
+            box-shadow: rgba(20, 18, 21, 0.15) 0px 24px 48px;
+        }
+
+        .service-image img {
+            width: 100%;
+            height: 350px;
+            object-fit: cover;
+            display: block;
+        }
+        \.process{
+            position: relative;
+            z-index: 100;
+            background: linear-gradient(135deg, rgba(15, 20, 25, 0.5), rgba(37, 99, 235, 0.08));
+        }
+
+        .process-image {
+            position: relative;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: rgba(20, 18, 21, 0.15) 0px 24px 48px;
+            margin: 2rem 0;
+        }
+
+        .process-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* ===== Equipment Section ===== */
+        \.equipment{
+            position: relative;
+            z-index: 100;
+            background: #f5f0e8;
+        }
+
+        .equipment-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .equipment-card {
+            background: #faf9f5;
+            border: 1px solid rgba(59, 130, 246, 0.3);
+            border-radius: 8px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .equipment-card:hover {
+            border-color: #2563eb;
+            box-shadow: 0 10px 30px rgba(59, 130, 246, 0.15);
+            transform: translateY(-5px);
+        }
+
+        .equipment-image {
+            width: 100%;
+            height: 200px;
+            background: linear-gradient(135deg, #1e3a8a, #2563eb);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .equipment-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .equipment-info {
+            padding: 1.5rem;
+        }
+
+        .equipment-info h5 {
+            color: #2563eb;
+            margin-bottom: 0.5rem;
+        }
+
+        .equipment-info p {
+            color: #3d3d3a;
+            font-size: 0.95rem;
+        }
+
+        /* ===== Products Section ===== */
+        \.products{
+            position: relative;
+            z-index: 100;
+            background: linear-gradient(135deg, rgba(15, 20, 25, 0.5), rgba(37, 99, 235, 0.08));
+        }
+
+        .products-image {
+            position: relative;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: rgba(20, 18, 21, 0.15) 0px 24px 48px;
+            margin: 2rem 0;
+        }
+
+        .products-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* ===== Organization Section ===== */
+        .organization {
+            background: #f5f0e8;
+        }
+
+        .org-intro {
+            background: rgba(224, 242, 254, 0.4);
+            padding: 2rem;
+            border-radius: 12px;
+            border-left: 4px solid #2563eb;
+            margin-bottom: 1.5rem;
+        }
+
+        .org-intro h3 {
+            font-size: 1.8rem;
+            color: #2563eb;
+            margin-bottom: 0.8rem;
+        }
+
+        .org-intro p {
+            color: #3d3d3a;
+            line-height: 1.8;
+        }
+
+        \.org-structure{
+            position: relative;
+            z-index: 100;
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        /* Department Boxes */
+        .org-departments {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .dept-column {
+            flex: 1;
+        }
+
+        .dept-box {
+            padding: 2rem 1.5rem;
+            border-radius: 12px;
+            color: #ffffff;
+            text-align: center;
+            transition: transform 0.3s ease;
+            box-shadow: 0 4px 12px rgba(20, 18, 21, 0.1);
+        }
+
+        .dept-box:hover {
+            transform: translateY(-5px);
+            box-shadow: rgba(0,0,0,0.12) 0px 16px 32px;
+        }
+
+        .dept-box h4 {
+            font-size: 1.4rem;
+            margin-bottom: 0.8rem;
+            font-weight: 800;
+            letter-spacing: 0.5px;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        .dept-box p {
+            font-size: 1rem;
+            line-height: 1.7;
+            font-weight: 500;
+            letter-spacing: 0.3px;
+        }
+
+        .dept-box.sales {
+            background: linear-gradient(135deg, #3b82f6 0%, #1e40af 100%);
+            color: #ffffff;
+        }
+
+        .dept-box.tech {
+            background: linear-gradient(135deg, #5db8a6 0%, #4a9a8c 100%);
+            color: #ffffff;
+        }
+
+        .dept-box.production {
+            background: linear-gradient(135deg, #2563eb 0%, #1e40af 100%);
+            color: #ffffff;
+        }
+
+        .dept-box.admin {
+            background: linear-gradient(135deg, #5db872 0%, #4a9a5c 100%);
+            color: #ffffff;
+        }
+
+        /* Org Chart */
+        /* Org Chart with SVG */
+        .org-chart-container-old {
+            position: relative;
+            background: #f5f0e8;
+            padding: 2rem 2rem 1rem 2rem;
+            border-radius: 12px;
+            border: 1px solid rgba(230, 223, 216, 0.5);
+            margin-bottom: 1.5rem;
+        }
+
+        .org-chart-svg-container::before {
+            content: '상세 조직도';
+            position: absolute;
+            top: 15px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: #2563eb;
+        }
+
+        .org-svg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+        }
+
+        .org-chart-container {
+            background: rgba(239, 233, 222, 0.6);
+            padding: 2rem;
+            border-radius: 12px;
+            border: 1px solid rgba(230, 223, 216, 0.5);
+        }
+
+        .org-chart-title-old {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: #2563eb;
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+
+        .org-level-ceo-old {
+            position: relative;
+            z-index: 2;
+            display: flex;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .org-position {
+            background: linear-gradient(135deg, #2563eb, #1e40af);
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 8px;
+            font-weight: 600;
+            min-width: 150px;
+            text-align: center;
+        }
+
+        .org-level-dept {
+            position: relative;
+            z-index: 2;
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 1.5rem;
+            gap: 2rem;
+        }
+
+        .org-box-container {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+        }
+
+        .org-position-box {
+            background: linear-gradient(135deg, #1e40af, #1e3a8a);
+            color: white;
+            padding: 0.8rem 1.5rem;
+            border-radius: 8px;
+            font-weight: 600;
+            text-align: center;
+            min-width: 120px;
+        }
+
+        .org-level-teams {
+            position: relative;
+            z-index: 2;
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 1.5rem;
+            gap: 2rem;
+        }
+
+        .team-group {
+            flex: 1;
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .team-box {
+            background: rgba(224, 242, 254, 0.5);
+            color: #2563eb;
+            padding: 0.6rem 1rem;
+            border-radius: 8px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            border: 1px solid rgba(59, 130, 246, 0.3);
+        }
+
+        .org-level-divisions {
+            position: relative;
+            z-index: 2;
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .division-box {
+            background: rgba(37, 99, 235, 0.15);
+            padding: 1rem 1.5rem;
+            border-radius: 8px;
+            border: 2px solid rgba(230, 223, 216, 0.5);
+        }
+
+        .division-label {
+            color: #2563eb;
+            font-weight: 600;
+            text-align: center;
+        }
+
+        /* ===== Organization Chart (New) ===== */
+        .org-chart-container {
+            background: rgba(245, 240, 232, 0.8);
+            padding: 3rem 2rem;
+            border-radius: 12px;
+            border: 1px solid rgba(207, 69, 0, 0.5);
+            margin-bottom: 1.5rem;
+        }
+
+        .org-chart-container .section-title {
+            margin-bottom: 1.5rem;
+        }
+
+        /* CEO Level -->
+        .org-level-1 {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 2rem;
+        }
+
+        /* Separator Line -->
+        .org-separator-line {
+            height: 3px;
+            background: #faf9f5;
+            margin-bottom: 1.5rem;
+            position: relative;
+        }
+
+        /* Departments Level -->
+        .org-level-2 {
+            display: flex;
+            justify-content: center;
+            gap: 8rem;
+            margin-bottom: 2rem;
+            position: relative;
+        }
+
+        .org-level-2::before {
+            content: '';
+            position: absolute;
+            width: calc(100% - 4rem);
+            height: 3px;
+            background: #faf9f5;
+            top: -3rem;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        /* Teams Level -->
+        .org-level-3 {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 2rem;
+            position: relative;
+            flex-wrap: wrap;
+        }
+
+        .org-level-3::before {
+            content: '';
+            position: absolute;
+            width: calc(100% - 2rem);
+            height: 3px;
+            background: #faf9f5;
+            top: -3rem;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .org-team-column {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            align-items: center;
+            position: relative;
+        }
+
+        .org-team-column::before {
+            content: '';
+            position: absolute;
+            width: 3px;
+            height: 3rem;
+            background: #faf9f5;
+            top: -3rem;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .org-team-column::after {
+            content: '';
+            position: absolute;
+            width: 3px;
+            height: 2rem;
+            background: #faf9f5;
+            bottom: -2rem;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        /* Divisions Level -->
+        .org-level-4 {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 1rem;
+            flex-wrap: wrap;
+        }
+
+        /* Box Styles -->
+        .org-box {
+            background: #181715;
+            color: white;
+            padding: 0.8rem 1.5rem;
+            border-radius: 12px;
+            font-weight: 600;
+            font-size: 1rem;
+            text-align: center;
+            box-shadow: 0 4px 12px rgba(20, 18, 21, 0.1);
+            white-space: nowrap;
+        }
+
+        .ceo-box {
+            min-width: 200px;
+            padding: 1rem 2rem;
+            font-size: 1.1rem;
+        }
+
+        .dept-box {
+            min-width: 160px;
+            position: relative;
+        }
+
+        .dept-box::before {
+            content: '';
+            position: absolute;
+            width: 3px;
+            height: 3rem;
+            background: #faf9f5;
+            top: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .team-box {
+            min-width: 130px;
+        }
+
+        .org-sub-box {
+            background: #181715;
+            color: white;
+            padding: 0.7rem 1.3rem;
+            border-radius: 10px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            text-align: center;
+            box-shadow: 0 4px 12px rgba(20, 18, 21, 0.1);
+            min-width: 120px;
+        }
+
+        .div-box {
+            min-width: 130px;
+        }
+
+        /* Manpower Section */
+        .manpower-section {
+            background: linear-gradient(135deg, #f5f0e8 0%, #efe9de 100%);
+            padding: 2.5rem;
+            border-radius: 16px;
+            border: 2px solid #2563eb;
+            margin-top: 1rem;
+            box-shadow: 0 4px 12px rgba(37, 99, 235, 0.1);
+        }
+
+        .manpower-section h4 {
+            font-size: 1.6rem;
+            font-weight: 800;
+            color: #2563eb;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        .manpower-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .manpower-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1rem;
+            padding: 2rem 1.5rem;
+            background: linear-gradient(135deg, #2563eb 0%, #1e40af 100%);
+            border-radius: 12px;
+            border: 3px solid #1e40af;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 12px rgba(37, 99, 235, 0.2);
+        }
+
+        .manpower-item:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 20px rgba(37, 99, 235, 0.3);
+        }
+
+        .manpower-icon {
+            font-size: 2.5rem;
+            line-height: 1;
+        }
+
+        .manpower-stat {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 2.4rem;
+            font-weight: 900;
+            color: white;
+            line-height: 1;
+            margin-bottom: 0.3rem;
+        }
+
+        .stat-label {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: rgba(255, 255, 255, 0.95);
+        }
+            color: #64748b;
+            margin-top: 0.3rem;
+        }
+
+        .experience-info {
+            padding: 1.5rem;
+            background: linear-gradient(135deg, #e0f2fe 0%, #f0f9ff 100%);
+            border-left: 5px solid #2563eb;
+            border-radius: 8px;
+            border: 1px solid #2563eb;
+            margin-top: 1.5rem;
+        }
+
+        .experience-info p {
+            color: #141413;
+            margin: 0;
+            font-size: 1rem;
+            font-weight: 600;
+            line-height: 1.6;
+        }
+
+        /* ===== Certifications Section ===== */
+        .certifications {
+            position: relative;
+            z-index: 100;
+            background: linear-gradient(135deg, #f5f0e8 0%, #efe9de 100%);
+            padding: 2.5rem 2rem;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            color: #3d3d3a;
+            font-size: 1.1rem;
+            margin-top: -1rem;
+            margin-bottom: 1.5rem;
+            font-weight: 600;
+        }
+
+        .certifications-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+            gap: 2.5rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            margin-bottom: 1.5rem;
+        }
+
+        .certifications-grid-4 {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+            max-width: 1000px;
+            margin: 0 auto;
+            margin-bottom: 1.5rem;
+        }
+
+        .certification-card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 2px solid rgba(37, 99, 235, 0.1);
+        }
+
+        .certification-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 24px rgba(37, 99, 235, 0.15);
+        }
+
+        .certification-header {
+            background: linear-gradient(135deg, #2563eb 0%, #1e40af 100%);
+            padding: 1.2rem;
+            text-align: center;
+        }
+
+        .certification-title {
+            color: white;
+            font-size: 1.1rem;
+            font-weight: 800;
+            margin: 0;
+            letter-spacing: 0.5px;
+        }
+
+        .certification-subtitle-text {
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 0.85rem;
+            margin: 0.5rem 0 0 0;
+            font-weight: 600;
+        }
+
+        .certification-content-simple {
+            padding: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .certification-image {
+            width: 100%;
+            height: 200px;
+            background: #f5f0e8;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .certification-details-simple {
+            display: flex;
+            flex-direction: column;
+            gap: 0.8rem;
+        }
+
+        .detail-item-simple {
+            display: flex;
+            flex-direction: column;
+            gap: 0.4rem;
+            padding: 0.8rem;
+            background: #f5f0e8;
+            border-radius: 6px;
+            border-left: 3px solid #2563eb;
+        }
+
+        .detail-item-simple .detail-label {
+            font-weight: 700;
+            color: #2563eb;
+            font-size: 0.85rem;
+        }
+
+        .detail-item-simple .detail-value {
+            color: #3d3d3a;
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+
+        .certification-content {
+            padding: 2rem;
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
+            gap: 1.5rem;
+            align-items: start;
+        }
+
+        .certification-info h4 {
+            font-size: 1.2rem;
+            color: #2563eb;
+            margin: 0 0 0.5rem 0;
+            font-weight: 800;
+        }
+
+        .certification-description {
+            color: #3d3d3a;
+            font-size: 0.95rem;
+            margin-bottom: 1.5rem;
+            font-weight: 600;
+        }
+
+        .certification-details {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .detail-item {
+            display: flex;
+            gap: 1rem;
+            padding: 0.8rem;
+            background: #f5f0e8;
+            border-radius: 8px;
+            border-left: 3px solid #2563eb;
+        }
+
+        .detail-label {
+            font-weight: 700;
+            color: #2563eb;
+            min-width: 70px;
+            font-size: 0.9rem;
+        }
+
+        .detail-value {
+            color: #3d3d3a;
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+
+        .certifications-description {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .description-box {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            border-left: 5px solid #2563eb;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .description-box h4 {
+            font-size: 1.1rem;
+            color: #2563eb;
+            margin: 0 0 1rem 0;
+            font-weight: 800;
+        }
+
+        .description-box p {
+            color: #3d3d3a;
+            line-height: 1.6;
+            font-size: 0.95rem;
+            margin: 0;
+        }
+
+        /* ===== Contact Section ===== */
+        \.contact{
+            position: relative;
+            z-index: 100;
+            background: linear-gradient(135deg, rgba(37, 99, 235, 0.15), rgba(15, 20, 25, 0.5));
+        }
+
+        .contact-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .contact-info h3 {
+            color: #2563eb;
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .contact-item {
+            margin-bottom: 1.5rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 1px solid rgba(59, 130, 246, 0.2);
+        }
+
+        .contact-item:last-child {
+            border-bottom: none;
+        }
+
+        .contact-label {
+            color: #64748b;
+            font-size: 0.95rem;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .contact-value {
+            color: #141413;
+            font-size: 1.1rem;
+            margin-top: 0.5rem;
+        }
+
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            padding: 0.8rem;
+            background: #f5f0e8;
+            border: 1px solid #e6dfd8;
+            border-radius: 8px;
+            color: #141413;
+            font-family: inherit;
+            font-size: 1rem;
+        }
+
+        .contact-form input::placeholder,
+        .contact-form textarea::placeholder {
+            color: #6c6a64;
+        }
+
+        .contact-form button {
+            padding: 1rem;
+            background: #2563eb;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .contact-form button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(59, 130, 246, 0.4);
+        }
+
+        /* ===== Footer ===== */
+        footer {
+            background: rgba(255, 255, 255, 0.8);
+            border-top: 1px solid rgba(59, 130, 246, 0.2);
+            padding: 2rem 3rem;
+            text-align: center;
+            color: #64748b;
+        }
+
+        .footer-content {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            color: #64748b;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: #2563eb;
+        }
+
+        /* ===== Image Hover Effects ===== */
+        .image-container {
+            position: relative;
+            overflow: hidden;
+            border-radius: 12px;
+        }
+
+        .image-container img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.3s ease;
+        }
+
+        .image-container:hover img {
+            transform: scale(1.05);
+        }
+
+        .large-image-container {
+            position: relative;
+            overflow: hidden;
+            border-radius: 12px;
+            background: #f5f0e8;
+            padding: 0;
+            margin: 0;
+        }
+
+        .large-image-container img {
+            display: block;
+            width: 100%;
+            height: auto;
+            margin: 0;
+            padding: 0;
+            border-radius: 12px;
+        }
+
+        .large-image-container p {
+            padding: 0 1.5rem 1.5rem 1.5rem;
+            margin: 0;
+        }
+
+        /* ===== Responsive ===== */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 3.5rem;
+            }
+
+            .hero p {
+                font-size: 1.05rem;
+            }
+
+            nav {
+                padding: 1rem;
+            }
+
+            .nav-menu {
+                gap: 1rem;
+                font-size: 0.85rem;
+            }
+
+            .section-title {
+                font-size: 1.8rem;
+            }
+
+            .about-content {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-content {
+                grid-template-columns: 1fr;
+            }
+
+            .org-content {
+                grid-template-columns: 1fr;
+            }
+
+            .org-level-dept {
+            position: relative;
+            z-index: 2;
+                flex-direction: column;
+            }
+
+            .org-level-teams {
+            position: relative;
+            z-index: 2;
+                flex-direction: column;
+            }
+
+            .org-departments {
+                grid-template-columns: 1fr;
+            }
+
+            .manpower-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .philosophy-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .equipment-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .service-content {
+                flex-direction: column !important;
+                gap: 2rem;
+            }
+
+            .service-text {
+                min-width: auto;
+            }
+
+            .service-image {
+                min-width: auto;
+            }
+
+            .service-image img {
+                height: 250px;
+            }
+
+            section {
+                padding: 3rem 1rem;
+            }
+        }
+        .equipment {
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.5), rgba(219, 234, 254, 0.3));
+            position: relative;
+            z-index: 100;
+            padding: 2.5rem 2rem;
+        }
+
+        .equipment-category {
+            margin-bottom: 4rem;
+        }
+
+        .category-title {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: #141413;
+            text-align: left;
+            margin-bottom: 2rem;
+            padding-bottom: 1rem;
+            border-bottom: 3px solid #2563eb;
+        }
+
+        .equipment-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .equipment-grid-3 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .equipment-item {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .equipment-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(37, 99, 235, 0.15);
+        }
+
+        .equipment-image {
+            width: 100%;
+            height: 250px;
+            overflow: hidden;
+            background: #f5f0e8;
+        }
+
+        .equipment-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .equipment-info {
+            padding: 2rem;
+        }
+
+        .equipment-info h4 {
+            font-size: 1.4rem;
+            font-weight: 800;
+            color: #141413;
+            margin-bottom: 1.5rem;
+        }
+
+        .equipment-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+            gap: 1rem;
+        }
+
+        .stat-box {
+            background: linear-gradient(135deg, #2563eb 0%, #1e40af 100%);
+            padding: 1.2rem 1rem;
+            border-radius: 8px;
+            text-align: center;
+            box-shadow: 0 2px 8px rgba(37, 99, 235, 0.2);
+            transition: transform 0.3s ease;
+        }
+
+        .stat-box:hover {
+            transform: scale(1.05);
+        }
+
+        .stat-label {
+            font-size: 0.85rem;
+            color: rgba(255, 255, 255, 0.8);
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-value {
+            font-size: 1.6rem;
+            font-weight: 900;
+            color: white;
+            line-height: 1;
+        }
+
+        .machining-details-toggle {
+            cursor: pointer !important;
+            transition: all 0.3s ease;
+        }
+
+        .machining-details-toggle:hover {
+            transform: scale(1.05) !important;
+            box-shadow: 0 4px 16px rgba(37, 99, 235, 0.4) !important;
+        }
+
+        .detail-table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .detail-table thead {
+            background: linear-gradient(135deg, #2563eb 0%, #1e40af 100%);
+        }
+
+        .detail-table th {
+            padding: 1rem;
+            color: white;
+            font-weight: 700;
+            text-align: center;
+            border-right: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .detail-table th:last-child {
+            border-right: none;
+        }
+
+        .detail-table td {
+            padding: 0.8rem 1rem;
+            text-align: center;
+            border-bottom: 1px solid #e6dfd8;
+            color: #3d3d3a;
+            font-weight: 500;
+        }
+
+        .detail-table tbody tr:hover {
+            background: #f5f0e8;
+        }
+
+        .detail-table tbody tr:last-child {
+            border-bottom: none;
+        }
+
+        .detail-table tbody tr:first-child td {
+            border-top: 1px solid #e6dfd8;
+        }
+
+        .table-total {
+            background: linear-gradient(135deg, rgba(37, 99, 235, 0.1) 0%, rgba(30, 64, 175, 0.1) 100%);
+            font-weight: 700;
+            color: #2563eb;
+        }
+
+        .total-count {
+            color: #2563eb;
+            font-weight: 900;
+            font-size: 1.1rem;
+        }
+
+        .detail-close-btn {
+            margin-top: 1.5rem;
+            padding: 0.8rem 2rem;
+            background: linear-gradient(135deg, #2563eb 0%, #1e40af 100%);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 8px rgba(37, 99, 235, 0.3);
+        }
+
+        .detail-close-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(37, 99, 235, 0.4);
+        }
+
+        @media (max-width: 768px) {
+            .detail-table {
+                font-size: 0.9rem;
+            }
+
+            .detail-table th,
+            .detail-table td {
+                padding: 0.6rem 0.5rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .equipment-grid-3 {
+                grid-template-columns: 1fr;
+            }
+
+            .equipment-image {
+                height: 180px;
+            }
+
+            .stat-box {
+                padding: 1rem 0.8rem;
+            }
+
+            .stat-value {
+                font-size: 1.4rem;
+            }
+        }
+
+        .product-category {
+            margin-bottom: 1.5rem;
+        }
+
+        .product-images-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .product-image-box {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .product-image-box:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 24px rgba(37, 99, 235, 0.2);
+        }
+
+        .product-image-box img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .product-images-grid-4 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        @media (max-width: 768px) {
+            .product-images-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .product-image-box img {
+                height: 200px;
+            }
+
+            .certifications-grid-4 {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+                max-width: 100%;
+            }
+
+            .certification-image {
+                height: 150px;
+            }
+
+            .certification-header {
+                padding: 1rem;
+            }
+
+            .certification-title {
+                font-size: 1rem;
+            }
+
+            .certification-subtitle-text {
+                font-size: 0.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <header>
+        <nav>
+            <div class="logo">
+                <div class="logo-icon">
+                    <div class="logo-top">
+                        <div class="logo-color red"></div>
+                        <div class="logo-color blue"></div>
+                        <div class="logo-color yellow"></div>
+                        <div class="logo-color red"></div>
+                        <div class="logo-color blue"></div>
+                    </div>
+                    <div class="logo-bottom">
+                        <div class="logo-color red"></div>
+                        <div class="logo-color blue"></div>
+                        <div class="logo-color red"></div>
+                        <div class="logo-color yellow"></div>
+                    </div>
+                </div>
+                <div class="logo-text">
+                    <div class="logo-name">NTL</div>
+                    <div class="logo-slogan">New Technology Leader</div>
+                </div>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#about">회사소개</a></li>
+                <li><a href="#philosophy">경영철학</a></li>
+                <li><a href="#services">서비스</a></li>
+                <li><a href="#equipment">장비</a></li>
+                <li><a href="#products">제품</a></li>
+                <li><a href="#certifications">인증</a></li>
+            </ul>
+            <a href="#contact" class="nav-contact">문의</a>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>혁신 기술로<br><span class="highlight">미래를 만드는</span> NTL</h1>
+            <p>정밀 산업용 부품과 장비의 글로벌 리더</p>
+            <a href="#contact" class="cta-button">문의하기</a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <h2 class="section-title">회사소개</h2>
+        <div class="about-content">
+            <div class="about-text">
+                <h3>New Technology Leader</h3>
+                <p><strong>NTL</strong>은 2003년 설립되어 20년 이상의 경험을 바탕으로 정밀 산업용 부품과 검사 장비를 제조하는 전문 기업입니다. 최고의 품질과 혁신적인 기술로 글로벌 시장에서 신뢰받는 파트너가 되기 위해 노력하고 있습니다.</p>
+                <p style="margin-bottom: 1.5rem;">현재 40명 규모의 전문 인력과 최첨단 제조설비를 갖추고 있으며, 국내 주요 기업들(EUGENE TECH, APTC, APET)의 신뢰할 수 있는 협력사로 활동 중입니다.</p>
+                <div class="about-features">
+                    <div class="feature-item"><span>2003년 NTL TECH 설립 (2005년 법인 전환)</span></div>
+                    <div class="feature-item"><span>ISO 9001 국제 표준 인증</span></div>
+                    <div class="feature-item"><span>클린룸 시스템 및 리이어빌리티 평가 라인 구축</span></div>
+                    <div class="feature-item"><span>스마트팩토리 및 2차 공장 확장</span></div>
+                </div>
+            </div>
+        <div class="about-image">
+            <img src="NTL1.jpg" alt="NTL 회사 전경" style="width: 100%; height: 100%; object-fit: cover; border-radius: 12px;">
+        </div>
+        </div>
+    </section>
+
+    <!-- Philosophy Section -->
+    <section id="philosophy" class="philosophy">
+        <h2 class="section-title">경영 철학</h2>
+        <div class="philosophy-grid">
+            <div class="philosophy-card">
+                <h4>🔧 품질혁신</h4>
+                <p>고객의 요구를 초과하는 품질의 제품을 지속적으로 제공하여 신뢰받는 파트너가 되겠습니다.</p>
+            </div>
+            <div class="philosophy-card">
+                <h4>📈 지속적 성장</h4>
+                <p>기술 개발과 인재 양성에 투자하여 지속적인 성장과 발전을 추구합니다.</p>
+            </div>
+            <div class="philosophy-card">
+                <h4>💡 원가혁신</h4>
+                <p>생산 효율성 개선을 통해 고객에게 최고의 가치를 제공합니다.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services">
+        <h2 class="section-title">주요 서비스</h2>
+        
+        <!-- Polishing Service -->
+        <div class="service-container">
+            <div class="service-content">
+                <div class="service-text">
+                    <h3>POLISHING</h3>
+                    <p>금속, 습식 폴리싱이 도우 가능한 전용라인 구축</p>
+                    <div class="service-description">
+                        <p>기금 부품의 표면처리 기초온 검중 및 광택서어 다양합니다. 다양한 고객의 요구에 부응하여 최고의 품질을 보유한 검증되고 숙련된 기술자들을 보유하고 있으며, 저축과 정도 도입으로 양중 품질의 공정 고도화에 힘을 쏟고 있습니다.</p>
+                    </div>
+                </div>
+                <div class="service-image">
+                    <img src="NTL2.jpg" alt="폴리싱 서비스" style="width: 100%; height: auto; border-radius: 12px; object-fit: cover;">
+                </div>
+            </div>
+        </div>
+
+        <!-- Machining Service -->
+        <div class="service-container alternate">
+            <div class="service-content">
+                <div class="service-image">
+                    <img src="NTL3.jpg" alt="머시닝 서비스" style="width: 100%; height: auto; border-radius: 12px; object-fit: cover;">
+                </div>
+                <div class="service-text">
+                    <h3>MACHINING</h3>
+                    <p>입증된 CNC 머시닝을 통한 정확하고 세밀한 부품 디자인 작업</p>
+                    <div class="service-description">
+                        <p>NTL에서는 복잡한 형상의 부품을 정확하고 세밀하게 가공할 수 있습니다. 소정산된 대형 설비이 5축, Dual Head MCT등을 보유하여 다양한 사이즈 및 대형 설산이 가능합니다. 도심 자축적인 황심 설비 관제로 미래 산업에 대해 적극적으로 대응하고 있습니다.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Equipment Section -->
+    <section id="equipment" class="equipment">
+        <h2 class="section-title">주요 장비</h2>
+        <p style="text-align: center; color: #3d3d3a; margin-bottom: 4rem;">최첨단 기계 설비로 고품질 제품을 생산합니다</p>
+        
+        <!-- Equipment Category 1: Machining Center -->
+        <div class="equipment-category">
+            <h3 class="category-title">머시닝센터 (Machining Center)</h3>
+            <div class="equipment-grid">
+                <div class="equipment-item">
+                    <div class="equipment-image">
+                        <img src="NTL5.jpg" alt="머시닝센터" style="width: 100%; height: 250px; object-fit: cover; border-radius: 12px;">
+                    </div>
+                    <div class="equipment-info">
+                        <h4>정밀 머시닝</h4>
+                        <div class="equipment-stats">
+                            <div class="stat-box machining-details-toggle" style="cursor: pointer;">
+                                <div class="stat-label">보유 수</div>
+                                <div class="stat-value">26대</div>
+                            </div>
+                            <div class="stat-box">
+                                <div class="stat-label">타입</div>
+                                <div class="stat-value">다양</div>
+                            </div>
+                            <div class="stat-box">
+                                <div class="stat-label">용도</div>
+                                <div class="stat-value">정밀가공</div>
+                            </div>
+                        </div>
+                        
+                        <!-- 정밀 머시닝 상세 테이블 (숨겨짐) -->
+                        <div class="machining-details" style="display: none; margin-top: 1rem;">
+                            <table class="detail-table">
+                                <thead>
+                                    <tr>
+                                        <th>구분</th>
+                                        <th>규격</th>
+                                        <th>1공장</th>
+                                        <th>2공장</th>
+                                        <th>용도</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>21 호기</td>
+                                        <td>4000*2100</td>
+                                        <td>2</td>
+                                        <td>1</td>
+                                        <td>Chamber</td>
+                                    </tr>
+                                    <tr>
+                                        <td>16 호기</td>
+                                        <td>3060*1600</td>
+                                        <td></td>
+                                        <td>1</td>
+                                        <td>부품가공용</td>
+                                    </tr>
+                                    <tr>
+                                        <td>14 호기</td>
+                                        <td>2000*1600*1400</td>
+                                        <td>1</td>
+                                        <td>1</td>
+                                        <td>Horizontal</td>
+                                    </tr>
+                                    <tr>
+                                        <td>7 호기</td>
+                                        <td>1600*700</td>
+                                        <td>1</td>
+                                        <td>1</td>
+                                        <td>부품가공용</td>
+                                    </tr>
+                                    <tr>
+                                        <td>6 호기</td>
+                                        <td>2100*670</td>
+                                        <td></td>
+                                        <td>6</td>
+                                        <td>부품가공용</td>
+                                    </tr>
+                                    <tr>
+                                        <td>5호기장축</td>
+                                        <td>4000*510</td>
+                                        <td>1</td>
+                                        <td></td>
+                                        <td>부품가공용</td>
+                                    </tr>
+                                    <tr>
+                                        <td>5 호기</td>
+                                        <td>1550*520</td>
+                                        <td>2</td>
+                                        <td>5</td>
+                                        <td>Showerhead</td>
+                                    </tr>
+                                    <tr>
+                                        <td>4 호기</td>
+                                        <td>750*400</td>
+                                        <td></td>
+                                        <td>4</td>
+                                        <td>Block plate</td>
+                                    </tr>
+                                    <tr class="table-total">
+                                        <td colspan="2">Machining Center</td>
+                                        <td>7대</td>
+                                        <td>19대</td>
+                                        <td class="total-count">총 26대</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <button class="detail-close-btn" onclick="document.querySelector('.machining-details').style.display='none';">닫기</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Equipment Category 2: Lathe & Milling -->
+        <div class="equipment-category">
+            <h3 class="category-title">선반 & 밀링 (Lathe & Milling)</h3>
+            <div class="equipment-grid">
+                <div class="equipment-item">
+                    <div class="equipment-image">
+                        <img src="NTL6.jpg" alt="선반 및 밀링" style="width: 100%; height: 250px; object-fit: cover; border-radius: 12px;">
+                    </div>
+                    <div class="equipment-info">
+                        <h4>선반 & 밀링</h4>
+                        <div class="equipment-stats">
+                            <div class="stat-box">
+                                <div class="stat-label">밀링</div>
+                                <div class="stat-value">3대</div>
+                            </div>
+                            <div class="stat-box">
+                                <div class="stat-label">선반</div>
+                                <div class="stat-value">6대</div>
+                            </div>
+                            <div class="stat-box">
+                                <div class="stat-label">총 보유</div>
+                                <div class="stat-value">9대</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Equipment Category 3: Measurement Equipment -->
+        <div class="equipment-category">
+            <h3 class="category-title">측정 장비 (Measurement Equipment)</h3>
+            <div class="equipment-grid-3">
+                <div class="equipment-item">
+                    <div class="equipment-image">
+                        <img src="NTL7.jpg" alt="3차원 측정기" style="width: 100%; height: 200px; object-fit: cover; border-radius: 12px;">
+                    </div>
+                    <div class="equipment-info">
+                        <h4>3차원 측정기</h4>
+                        <div class="equipment-stats">
+                            <div class="stat-box">
+                                <div class="stat-label">보유 수</div>
+                                <div class="stat-value">3대</div>
+                            </div>
+                            <div class="stat-box">
+                                <div class="stat-label">정확도</div>
+                                <div class="stat-value">고정밀</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="equipment-item">
+                    <div class="equipment-image">
+                        <img src="NTL8.jpg" alt="비접촉 측정기" style="width: 100%; height: 200px; object-fit: cover; border-radius: 12px;">
+                    </div>
+                    <div class="equipment-info">
+                        <h4>비접촉 측정기</h4>
+                        <div class="equipment-stats">
+                            <div class="stat-box">
+                                <div class="stat-label">보유 수</div>
+                                <div class="stat-value">2대</div>
+                            </div>
+                            <div class="stat-box">
+                                <div class="stat-label">정확도</div>
+                                <div class="stat-value">초정밀</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="equipment-item">
+                    <div class="equipment-image">
+                        <img src="NTL8.jpg" alt="누설 검사기" style="width: 100%; height: 200px; object-fit: cover; border-radius: 12px;">
+                    </div>
+                    <div class="equipment-info">
+                        <h4>He Leak Detector</h4>
+                        <div class="equipment-stats">
+                            <div class="stat-box">
+                                <div class="stat-label">보유 수</div>
+                                <div class="stat-value">2대</div>
+                            </div>
+                            <div class="stat-box">
+                                <div class="stat-label">용도</div>
+                                <div class="stat-value">누설검사</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section id="products" class="products">
+        <h2 class="section-title">주요 제품</h2>
+        <p style="text-align: center; color: #3d3d3a; margin-bottom: 4rem;">알루미늄, 스테인레스 가공 부품 및 정밀 생산 아이템</p>
+        
+        <!-- Aluminum Products -->
+        <div style="margin-bottom: 4rem;">
+            <h3 style="font-size: 1.8rem; font-weight: 800; color: #141413; text-align: center; margin-bottom: 1.5rem;">알루미늄 부품</h3>
+            
+            <!-- CHAMBER -->
+            <div class="product-category" style="margin-bottom: 1.5rem;">
+                <div style="text-align: center; margin-bottom: 2rem;">
+                    <h4 style="font-size: 1.4rem; font-weight: 800; color: white; background: linear-gradient(135deg, #2563eb 0%, #1e40af 100%); padding: 0.8rem 2rem; display: inline-block; border-radius: 8px;">CHAMBER</h4>
+                </div>
+                <div class="product-images-grid">
+                    <div class="product-image-box">
+                        <img src="NTL8.jpg" alt="Chamber 1" style="width: 100%; height: 250px; object-fit: cover; border-radius: 12px; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);">
+                    </div>
+                    <div class="product-image-box">
+                        <img src="NTL9.jpg" alt="Chamber 2" style="width: 100%; height: 250px; object-fit: cover; border-radius: 12px; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);">
+                    </div>
+                    <div class="product-image-box">
+                        <img src="NTL10.jpg" alt="Chamber 3" style="width: 100%; height: 250px; object-fit: cover; border-radius: 12px; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);">
+                    </div>
+                </div>
+                <p style="text-align: center; color: #2563eb; margin-top: 1.5rem; font-weight: 600;">알루미늄 부품: Chamber, Showerhead 등 정밀 가공 부품</p>
+            </div>
+
+            <!-- SHOWER HEAD -->
+            <div class="product-category">
+                <div style="text-align: center; margin-bottom: 2rem;">
+                    <h4 style="font-size: 1.4rem; font-weight: 800; color: white; background: linear-gradient(135deg, #2563eb 0%, #1e40af 100%); padding: 0.8rem 2rem; display: inline-block; border-radius: 8px;">SHOWER HEAD</h4>
+                </div>
+                <div class="product-images-grid">
+                    <div class="product-image-box">
+                        <img src="NTL11.jpg" alt="Shower Head 1" style="width: 100%; height: 250px; object-fit: cover; border-radius: 12px; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);">
+                    </div>
+                    <div class="product-image-box">
+                        <img src="NTL12.jpg" alt="Shower Head 2" style="width: 100%; height: 250px; object-fit: cover; border-radius: 12px; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);">
+                    </div>
+                    <div class="product-image-box">
+                        <img src="NTL13.jpg" alt="Shower Head 3" style="width: 100%; height: 250px; object-fit: cover; border-radius: 12px; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);">
+                    </div>
+                </div>
+                <p style="text-align: center; color: #2563eb; margin-top: 1.5rem; font-weight: 600;">정밀 가공 부품: 다양한 사이즈 및 스펙의 Shower Head</p>
+            </div>
+        </div>
+
+        <!-- Other Products -->
+        <div style="margin-top: 4rem;">
+            <h3 style="font-size: 1.8rem; font-weight: 800; color: #141413; text-align: center; margin-bottom: 1.5rem;">기타 산업용 부품</h3>
+            
+            <!-- Welding Parts -->
+            <div class="product-category" style="margin-bottom: 1.5rem;">
+                <div style="text-align: center; margin-bottom: 2rem;">
+                    <h4 style="font-size: 1.4rem; font-weight: 800; color: white; background: linear-gradient(135deg, #2563eb 0%, #1e40af 100%); padding: 0.8rem 2rem; display: inline-block; border-radius: 8px;">Welding Parts</h4>
+                </div>
+                <div class="product-images-grid">
+                    <div class="product-image-box">
+                        <img src="NTL14.jpg" alt="Welding Parts 1" style="width: 100%; height: 250px; object-fit: cover; border-radius: 12px; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);">
+                    </div>
+                    <div class="product-image-box">
+                        <img src="NTL15.jpg" alt="Welding Parts 2" style="width: 100%; height: 250px; object-fit: cover; border-radius: 12px; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);">
+                    </div>
+                    <div class="product-image-box">
+                        <img src="NTL16.jpg" alt="Welding Parts 3" style="width: 100%; height: 250px; object-fit: cover; border-radius: 12px; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);">
+                    </div>
+                </div>
+                <p style="text-align: center; color: #2563eb; margin-top: 1.5rem; font-weight: 600;">고정밀 용접 부품 및 특수 산업용 부품</p>
+            </div>
+
+            <!-- Special Materials -->
+            <div class="product-category">
+                <div style="text-align: center; margin-bottom: 2rem;">
+                    <h4 style="font-size: 1.4rem; font-weight: 800; color: white; background: linear-gradient(135deg, #2563eb 0%, #1e40af 100%); padding: 0.8rem 2rem; display: inline-block; border-radius: 8px;">특수 소재</h4>
+                </div>
+                <div class="product-images-grid">
+                    <div class="product-image-box">
+                        <img src="NTL2.jpg" alt="Special Materials 1" style="width: 100%; height: 250px; object-fit: cover; border-radius: 12px; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);">
+                    </div>
+                    <div class="product-image-box">
+                        <img src="NTL3.jpg" alt="Special Materials 2" style="width: 100%; height: 250px; object-fit: cover; border-radius: 12px; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);">
+                    </div>
+                    <div class="product-image-box">
+                        <img src="NTL4.jpg" alt="Special Materials 3" style="width: 100%; height: 250px; object-fit: cover; border-radius: 12px; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);">
+                    </div>
+                </div>
+                <p style="text-align: center; color: #2563eb; margin-top: 1.5rem; font-weight: 600;">스테인레스 및 다양한 특수 소재 가공 부품</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Organization Section -->
+    <section id="organization" class="organization">
+        <h2 class="section-title">조직구조</h2>
+        
+        <div class="org-intro">
+            <h3>효율적인 조직 구조</h3>
+            <p><strong>대표이사: 박용운</strong></p>
+            <p style="margin-top: 1rem;">NTL은 영업본부, 기술본부, 생산본부, 관리본부의 4개 핵심 부서로 구성된 효율적인 조직 체계를 갖추고 있습니다. 각 부서는 전문성을 바탕으로 최고 수준의 제품과 서비스를 제공하기 위해 노력하고 있습니다.</p>
+        </div>
+
+        <div class="org-structure">
+            <!-- Department Boxes -->
+            <div class="org-departments">
+                <div class="dept-column">
+                    <div class="dept-box sales">
+                        <h4>영업본부</h4>
+                        <p>국내외 고객 관리<br>제품 판매 및 마케팅</p>
+                    </div>
+                </div>
+                <div class="dept-column">
+                    <div class="dept-box tech">
+                        <h4>기술본부</h4>
+                        <p>제품 개발<br>기술 지원 및 혁신</p>
+                    </div>
+                </div>
+                <div class="dept-column">
+                    <div class="dept-box production">
+                        <h4>생산본부</h4>
+                        <p>제조 및 생산<br>품질 관리</p>
+                    </div>
+                </div>
+                <div class="dept-column">
+                    <div class="dept-box admin">
+                        <h4>관리본부</h4>
+                        <p>재무 및 인사<br>행정 관리</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Org Chart with SVG Lines -->
+            <div style="background: linear-gradient(135deg, #ffffff 0%, #f5f5f5 100%); padding: 3rem 2rem; border-radius: 12px; border: 2px solid #ddd; margin-bottom: 1.5rem; box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.05);">
+                <h2 class="section-title" style="color: #141413;">상세 조직도</h2>
+                
+                <div style="display: flex; justify-content: center; margin-top: 3rem;">
+                    <img src="NTL18.png" alt="상세 조직도" style="max-width: 100%; height: auto; border-radius: 8px; box-shadow: 0 8px 24px rgba(20, 18, 21, 0.08);">
+                </div>
+            </div>
+
+            <!-- Manpower Statistics -->
+            <div class="manpower-section">
+                <h4>인력 현황 (Manpower)</h4>
+                <div class="manpower-grid">
+                    <div class="manpower-item">
+                        <div class="manpower-icon">📊</div>
+                        <div class="manpower-stat">
+                            <div class="stat-number">26</div>
+                            <div class="stat-label">제조</div>
+                        </div>
+                    </div>
+                    <div class="manpower-item">
+                        <div class="manpower-icon">✓</div>
+                        <div class="manpower-stat">
+                            <div class="stat-number">6</div>
+                            <div class="stat-label">품질</div>
+                        </div>
+                    </div>
+                    <div class="manpower-item">
+                        <div class="manpower-icon">💼</div>
+                        <div class="manpower-stat">
+                            <div class="stat-number">3</div>
+                            <div class="stat-label">관리</div>
+                        </div>
+                    </div>
+                    <div class="manpower-item">
+                        <div class="manpower-icon">📈</div>
+                        <div class="manpower-stat">
+                            <div class="stat-number">5</div>
+                            <div class="stat-label">영업</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="experience-info">
+                    <p><strong>10년 이상 경력자:</strong> 10명 (25%)</p>
+                    <p style="margin-top: 0.5rem; font-size: 0.95rem; color: #64748b;">풍부한 경험과 전문 기술로 최고 수준의 제품을 보장합니다</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Certifications Section -->
+    <section id="certifications" class="certifications">
+        <h2 class="section-title">인증 현황</h2>
+        <p class="section-subtitle">국제 표준 인증 및 위험성 평가 인정</p>
+        
+        <div class="certifications-grid-4">
+            <!-- Quality Management ISO 9001 -->
+            <div class="certification-card">
+                <div class="certification-header">
+                    <h3 class="certification-title">ISO 9001:2015</h3>
+                    <p class="certification-subtitle-text">품질경영시스템</p>
+                </div>
+                <div class="certification-content-simple">
+                    <div class="certification-image">
+                        <img src="NTL20.jpg" alt="ISO 9001:2015 품질경영시스템" style="width: 100%; height: 100%; object-fit: cover; border-radius: 8px;">
+                    </div>
+                    <div class="certification-details-simple">
+                        <div class="detail-item-simple">
+                            <span class="detail-label">인증기관</span>
+                            <span class="detail-value">QEC Certification</span>
+                        </div>
+                        <div class="detail-item-simple">
+                            <span class="detail-label">유효기간</span>
+                            <span class="detail-value">2023.03 ~ 2026.03</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ISO 14001 -->
+            <div class="certification-card">
+                <div class="certification-header">
+                    <h3 class="certification-title">ISO 14001</h3>
+                    <p class="certification-subtitle-text">환경경영시스템</p>
+                </div>
+                <div class="certification-content-simple">
+                    <div class="certification-image">
+                        <img src="NTL21.jpg" alt="ISO 14001 환경경영시스템" style="width: 100%; height: 100%; object-fit: cover; border-radius: 8px;">
+                    </div>
+                    <div class="certification-details-simple">
+                        <div class="detail-item-simple">
+                            <span class="detail-label">인증기관</span>
+                            <span class="detail-value">국제인증기관</span>
+                        </div>
+                        <div class="detail-item-simple">
+                            <span class="detail-label">유효기간</span>
+                            <span class="detail-value">2023.06 ~ 2026.06</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Risk Assessment -->
+            <div class="certification-card">
+                <div class="certification-header">
+                    <h3 class="certification-title">위험성평가</h3>
+                    <p class="certification-subtitle-text">산업안전보건</p>
+                </div>
+                <div class="certification-content-simple">
+                    <div class="certification-image">
+                        <img src="NTL22.jpg" alt="위험성평가 인정서" style="width: 100%; height: 100%; object-fit: cover; border-radius: 8px;">
+                    </div>
+                    <div class="certification-details-simple">
+                        <div class="detail-item-simple">
+                            <span class="detail-label">인증기관</span>
+                            <span class="detail-value">한국산업안전보건공단</span>
+                        </div>
+                        <div class="detail-item-simple">
+                            <span class="detail-label">유효기간</span>
+                            <span class="detail-value">2018.07 ~ 2021.07</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ISO 45001 -->
+            <div class="certification-card">
+                <div class="certification-header">
+                    <h3 class="certification-title">ISO 45001</h3>
+                    <p class="certification-subtitle-text">산업안전보건경영</p>
+                </div>
+                <div class="certification-content-simple">
+                    <div class="certification-image">
+                        <img src="NTL23.jpg" alt="ISO 45001 산업안전보건경영시스템" style="width: 100%; height: 100%; object-fit: cover; border-radius: 8px;">
+                    </div>
+                    <div class="certification-details-simple">
+                        <div class="detail-item-simple">
+                            <span class="detail-label">인증기관</span>
+                            <span class="detail-value">국제인증기관</span>
+                        </div>
+                        <div class="detail-item-simple">
+                            <span class="detail-label">유효기간</span>
+                            <span class="detail-value">2022.05 ~ 2025.05</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="certifications-description">
+            <div class="description-box">
+                <h4>🏆 국제 표준 인증</h4>
+                <p>NTL은 ISO 9001, ISO 14001 등 국제 표준 인증을 획득하여 국제 수준의 품질과 환경 관리 체계를 운영하고 있습니다.</p>
+            </div>
+            <div class="description-box">
+                <h4>⚠️ 안전 관리 인정</h4>
+                <p>한국산업안전보건공단에서 인정한 위험성평가 기관이며, ISO 45001 산업안전보건경영시스템 인증을 통해 최고 수준의 산업안전을 보장합니다.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <h2 class="section-title">문의</h2>
+        <div class="contact-content">
+            <div class="contact-info">
+                <h3>연락처 정보</h3>
+                <div class="contact-item">
+                    <div class="contact-label">회사명</div>
+                    <div class="contact-value">주식회사 엔티엘 (NTL)</div>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-label">대표이사</div>
+                    <div class="contact-value">박용운</div>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-label">종업원</div>
+                    <div class="contact-value">40명</div>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-label">공장 위치</div>
+                    <div class="contact-value">
+                        경기도 화성시 신리 304-6<br>
+                        경기도 양감면 대양리 768
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-label">사업시간</div>
+                    <div class="contact-value">평일 09:00 - 18:00</div>
+                </div>
+            </div>
+            <form class="contact-form">
+                <input type="text" placeholder="회사명" required>
+                <input type="email" placeholder="이메일" required>
+                <input type="tel" placeholder="전화번호" required>
+                <input type="text" placeholder="제목" required>
+                <textarea rows="5" placeholder="문의 내용을 입력해주세요" required></textarea>
+                <button type="submit">문의 발송</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-links">
+                <a href="#">개인정보처리방침</a>
+                <a href="#">이용약관</a>
+                <a href="#">사이트맵</a>
+                <a href="#">LinkedIn</a>
+            </div>
+            <p>&copy; 2024 NTL(New Technology Leader). All rights reserved.</p>
+            <p style="margin-top: 1rem; font-size: 0.95rem;">주식회사 엔티엘 | 경기도 화성시 신리 304-6, 양감면 대양리 768</p>
+        </div>
+    </footer>
+
+    <script>
+        // 정밀 머시닝 상세 정보 토글
+        const machiningToggle = document.querySelector('.machining-details-toggle');
+        const machiningDetails = document.querySelector('.machining-details');
+        
+        if (machiningToggle && machiningDetails) {
+            machiningToggle.addEventListener('click', function() {
+                if (machiningDetails.style.display === 'none') {
+                    machiningDetails.style.display = 'block';
+                    machiningToggle.style.backgroundColor = 'rgba(37, 99, 235, 0.2)';
+                } else {
+                    machiningDetails.style.display = 'none';
+                    machiningToggle.style.backgroundColor = '';
+                }
+            });
+        }
+
+        // Smooth scroll behavior
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                const href = this.getAttribute('href');
+                // '#'만 있는 경우는 무시
+                if (href === '#' || href === '') {
+                    e.preventDefault();
+                    return;
+                }
+                e.preventDefault();
+                const target = document.querySelector(href);
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Form submission
+        document.querySelector('.contact-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('문의가 제출되었습니다. 빠른 시간 내에 연락드리겠습니다.');
+            this.reset();
+        });
+
+        // Image lazy loading
+        document.querySelectorAll('img').forEach(img => {
+            img.addEventListener('load', function() {
+                this.style.opacity = '1';
+            });
+        });
+    </script>
+</body>
+</html>
