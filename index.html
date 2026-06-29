@@ -196,7 +196,7 @@
             z-index: 10;
             text-align: center;
             max-width: 800px;
-            animation: fadeInUp 1s ease-out;
+            
         }
 
         .hero h1 {
@@ -260,7 +260,7 @@
         }
 
         section.visible {
-            display: flex;
+            display: revert;  /* 원래 display 속성으로 복구 */
         }
 
         .section-title {
@@ -284,11 +284,11 @@
         /* ===== About Section ===== */
         .about {
             background: linear-gradient(135deg, rgba(26, 26, 26, 0.8), rgba(30, 40, 60, 0.6));
-            padding: 2rem 2rem;
+            padding: 3rem 2rem;
             position: relative;
             z-index: 100;
             margin: 0;
-            min-height: auto;
+            min-height: 100vh;
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -298,34 +298,34 @@
         .about-content {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 3rem;
+            gap: 4rem;
             align-items: center;
         }
 
         .about-text h3 {
-            font-size: 2.2rem;
+            font-size: 2.8rem;
             color: #2563eb;
-            margin-bottom: 1.5rem;
+            margin-bottom: 2rem;
             font-weight: 800;
         }
 
         .about-text p {
             color: #cccccc;
-            margin-bottom: 1.8rem;
-            line-height: 1.9;
-            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            line-height: 2;
+            font-size: 1.35rem;
         }
 
         .about-features {
             display: flex;
             flex-direction: column;
-            gap: 1.2rem;
+            gap: 1.5rem;
         }
 
         .feature-item {
             display: flex;
             gap: 1rem;
-            padding: 1.3rem;
+            padding: 1.5rem;
             background: rgba(40, 50, 70, 0.6);
             border-left: 3px solid #2563eb;
             border-radius: 8px;
@@ -345,7 +345,7 @@
 
         .about-image {
             position: relative;
-            height: 500px;
+            height: 600px;
             background: #2a2a2a;
             border-radius: 12px;
             overflow: hidden;
@@ -368,23 +368,23 @@
             position: relative;
             z-index: 100;
             background: #1a1a1a;
-            min-height: auto;
+            min-height: 100vh;
             display: flex;
             flex-direction: column;
             justify-content: center;
-            padding: 3rem 2rem;
+            padding: 4rem 2rem;
             scroll-margin-top: 80px;
         }
 
         .philosophy-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 3rem;
         }
 
         .philosophy-card {
             background: linear-gradient(135deg, rgba(40, 50, 70, 0.5), rgba(37, 99, 235, 0.1));
-            padding: 2rem;
+            padding: 2.5rem;
             border-radius: 8px;
             border: 1px solid rgba(59, 130, 246, 0.3);
             transition: all 0.3s ease;
@@ -397,14 +397,15 @@
         }
 
         .philosophy-card h4 {
-            font-size: 1.5rem;
+            font-size: 1.8rem;
             color: #2563eb;
-            margin-bottom: 1rem;
+            margin-bottom: 1.3rem;
         }
 
         .philosophy-card p {
             color: #cccccc;
-            line-height: 1.8;
+            line-height: 2;
+            font-size: 1.2rem;
         }
 
         /* ===== Services Section ===== */
@@ -412,11 +413,11 @@
             position: relative;
             z-index: 100;
             background: linear-gradient(135deg, rgba(20, 25, 35, 0.8), rgba(30, 40, 60, 0.6));
-            min-height: auto;
+            min-height: 100vh;
             display: flex;
             flex-direction: column;
             justify-content: center;
-            padding: 2rem 2rem;
+            padding: 4rem 2rem;
             scroll-margin-top: 80px;
         }
 
@@ -432,7 +433,7 @@
 
         .service-content {
             display: flex;
-            gap: 2rem;
+            gap: 3rem;
             align-items: center;
             flex-direction: row;
         }
@@ -443,32 +444,33 @@
         }
 
         .service-text h3 {
-            font-size: 3.5rem;
+            font-size: 3.8rem;
             color: #2563eb;
             font-weight: 800;
-            margin-bottom: 0.5rem;
+            margin-bottom: 0.8rem;
             letter-spacing: 1px;
         }
 
         .service-text > p {
-            font-size: 1.65rem;
+            font-size: 1.8rem;
             color: #2563eb;
-            margin-bottom: 1.5rem;
+            margin-bottom: 2rem;
             font-weight: 700;
         }
 
         .service-description {
             background: rgba(40, 50, 70, 0.6);
-            padding: 1.5rem;
+            padding: 2rem;
             border-left: 4px solid #2563eb;
             border-radius: 8px;
-            margin-bottom: 1.5rem;
+            margin-bottom: 2rem;
         }
 
         .service-description p {
             color: #cccccc;
-            line-height: 1.8;
+            line-height: 2;
             margin: 0;
+            font-size: 1.3rem;
         }
 
         .detail-link {
@@ -897,6 +899,13 @@
             border-radius: 8px;
         }
 
+        .org-chart-img {
+            width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 8px;
+        }
+
         /* Manpower Section - 50% 축소 */
         .manpower-section {
             background: linear-gradient(135deg, rgba(40, 50, 70, 0.5), rgba(30, 40, 60, 0.5));
@@ -985,8 +994,8 @@
             position: relative;
             z-index: 100;
             background: linear-gradient(135deg, rgba(26, 26, 26, 0.8), rgba(30, 40, 60, 0.6));
-            padding: 2rem 2rem;
-            min-height: auto;
+            padding: 4rem 2rem;
+            min-height: 100vh;
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -996,28 +1005,28 @@
         .section-subtitle {
             text-align: center;
             color: #cccccc;
-            font-size: 1.65rem;
+            font-size: 1.8rem;
             margin-top: -1rem;
-            margin-bottom: 1.5rem;
+            margin-bottom: 2rem;
             font-weight: 700;
         }
 
         .certifications-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
-            gap: 2.5rem;
+            grid-template-columns: repeat(auto-fit, minmax(480px, 1fr));
+            gap: 3rem;
             max-width: 1200px;
             margin: 0 auto;
-            margin-bottom: 1.5rem;
+            margin-bottom: 2rem;
         }
 
         .certifications-grid-4 {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
-            gap: 2rem;
+            gap: 3rem;
             max-width: 1000px;
             margin: 0 auto;
-            margin-bottom: 1.5rem;
+            margin-bottom: 2rem;
         }
 
         .certification-card {
@@ -2021,7 +2030,7 @@
                 <h2 class="section-title" style="color: #ffffff;">상세 조직도</h2>
                 
                 <div style="display: flex; justify-content: center; margin-top: 2rem;">
-                    <img src="NTL18.jpg" alt="상세 조직도" style="width: 100%; max-width: 900px; height: auto;">
+                    <img src="NTL18.jpg" alt="상세 조직도" class="org-chart-img">
                 </div>
             </div>
 
