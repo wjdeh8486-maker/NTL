@@ -147,67 +147,10 @@
         }
 
         /* ===== Edit Button (Small - Footer) ===== */
-        .edit-toggle-btn-small {
-            text-decoration: none;
-            color: white;
-            background: #1a1a1a;
-            padding: 0.4rem 0.8rem;
-            border-radius: 4px;
-            font-weight: 700;
-            font-size: 1.125rem;
-            transition: all 0.3s ease;
-            white-space: nowrap;
-            flex-shrink: 0;
-            border: 2px solid rgba(255, 255, 255, 0.3);
-            cursor: pointer;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-
-        .edit-toggle-btn-small:hover {
-            background: #2a2a2a;
-            border-color: #ffffff;
-            box-shadow: 0 2px 6px rgba(255, 255, 255, 0.2);
-        }
-
-        .edit-toggle-btn-small.active {
-            background: #ef4444;
-            color: white;
-            border-color: #dc2626;
-        }
-
-        /* 편집 가능한 요소 스타일 */
-        .editable {
-            transition: all 0.2s ease;
-        }
-
-        .editable.edit-mode {
-            background: rgba(59, 130, 246, 0.2);
-            border: 2px solid #2563eb;
-            border-radius: 4px;
-            padding: 0.5rem;
-            cursor: text;
-            outline: none;
-        }
-
-        .editable.edit-mode:focus {
-            background: rgba(59, 130, 246, 0.3);
-            box-shadow: 0 0 8px rgba(37, 99, 235, 0.4);
-        }
-
-        /* ===== Tab Navigation ===== */
-        /* ===== Tab Navigation ===== */
-        .tab-hidden {
-            display: none !important;
-        }
-
-        .tab-visible {
-            display: flex !important;
-        }
-
         /* ===== Hero Section ===== */
         .hero {
             position: relative;
-            min-height: 100vh;
+            min-height: auto;
             height: 100vh;
             width: 100%;
             margin: 0;
@@ -313,6 +256,11 @@
             padding: 3rem 2rem;
             max-width: 100%;
             margin: 0;
+            display: none;
+        }
+
+        section.visible {
+            display: flex;
         }
 
         .section-title {
@@ -340,7 +288,7 @@
             position: relative;
             z-index: 100;
             margin: 0;
-            min-height: 100vh;
+            min-height: auto;
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -420,7 +368,7 @@
             position: relative;
             z-index: 100;
             background: #1a1a1a;
-            min-height: 100vh;
+            min-height: auto;
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -464,7 +412,7 @@
             position: relative;
             z-index: 100;
             background: linear-gradient(135deg, rgba(20, 25, 35, 0.8), rgba(30, 40, 60, 0.6));
-            min-height: 100vh;
+            min-height: auto;
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -1038,7 +986,7 @@
             z-index: 100;
             background: linear-gradient(135deg, rgba(26, 26, 26, 0.8), rgba(30, 40, 60, 0.6));
             padding: 2rem 2rem;
-            min-height: 100vh;
+            min-height: auto;
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -1186,7 +1134,7 @@
             position: relative;
             z-index: 100;
             background: linear-gradient(135deg, rgba(37, 99, 235, 0.15), rgba(15, 20, 25, 0.5));
-            min-height: 100vh;
+            min-height: auto;
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -1647,8 +1595,8 @@
     <!-- Hero Section -->
     <section class="hero">
         <div class="hero-content">
-            <h1 class="editable" id="hero-title">혁신 기술로<br><span class="highlight">미래를 만드는</span> NTL</h1>
-            <p class="editable" id="hero-subtitle">정밀 산업용 부품과 장비의 글로벌 리더</p>
+            <h1 id="hero-title">혁신 기술로<br><span class="highlight">미래를 만드는</span> NTL</h1>
+            <p id="hero-subtitle">정밀 산업용 부품과 장비의 글로벌 리더</p>
             <a href="#contact" class="cta-button">문의하기</a>
         </div>
     </section>
@@ -1658,14 +1606,14 @@
         <h2 class="section-title">회사소개</h2>
         <div class="about-content">
             <div class="about-text">
-                <h3 class="editable" id="about-title">New Technology Leader</h3>
-                <p class="editable" id="about-content-1"><strong>NTL</strong>은 2003년 설립되어 20년 이상의 경험을 바탕으로 정밀 산업용 부품과 검사 장비를 제조하는 전문 기업입니다. 최고의 품질과 혁신적인 기술로 글로벌 시장에서 신뢰받는 파트너가 되기 위해 노력하고 있습니다.</p>
-                <p class="editable" id="about-content-2" style="margin-bottom: 1.5rem;">현재 40명 규모의 전문 인력과 최첨단 제조설비를 갖추고 있으며, 국내 주요 기업들(EUGENE TECH, APTC, APET)의 신뢰할 수 있는 협력사로 활동 중입니다.</p>
+                <h3 id="about-title">New Technology Leader</h3>
+                <p id="about-content-1"><strong>NTL</strong>은 2003년 설립되어 20년 이상의 경험을 바탕으로 정밀 산업용 부품과 검사 장비를 제조하는 전문 기업입니다. 최고의 품질과 혁신적인 기술로 글로벌 시장에서 신뢰받는 파트너가 되기 위해 노력하고 있습니다.</p>
+                <p id="about-content-2" style="margin-bottom: 1.5rem;">현재 40명 규모의 전문 인력과 최첨단 제조설비를 갖추고 있으며, 국내 주요 기업들(EUGENE TECH, APTC, APET)의 신뢰할 수 있는 협력사로 활동 중입니다.</p>
                 <div class="about-features">
-                    <div class="feature-item"><span class="editable" id="feature-1">2003년 NTL TECH 설립 (2005년 법인 전환)</span></div>
-                    <div class="feature-item"><span class="editable" id="feature-2">ISO 9001 국제 표준 인증</span></div>
-                    <div class="feature-item"><span class="editable" id="feature-3">클린룸 시스템 및 리이어빌리티 평가 라인 구축</span></div>
-                    <div class="feature-item"><span class="editable" id="feature-4">스마트팩토리 및 2차 공장 확장</span></div>
+                    <div class="feature-item"><span id="feature-1">2003년 NTL TECH 설립 (2005년 법인 전환)</span></div>
+                    <div class="feature-item"><span id="feature-2">ISO 9001 국제 표준 인증</span></div>
+                    <div class="feature-item"><span id="feature-3">클린룸 시스템 및 리이어빌리티 평가 라인 구축</span></div>
+                    <div class="feature-item"><span id="feature-4">스마트팩토리 및 2차 공장 확장</span></div>
                 </div>
             </div>
         <div class="about-image">
@@ -2278,7 +2226,6 @@
                 <a href="#">이용약관</a>
                 <a href="#">사이트맵</a>
                 <a href="#">LinkedIn</a>
-                <button id="editToggleBtn" class="edit-toggle-btn-small">✏️ 편집</button>
             </div>
             <p>&copy; 2003 NTL(New Technology Leader). All rights reserved.</p>
             <p style="margin-top: 1rem; font-size: 1.42rem;">주식회사 엔티엘 | 경기도 화성시 신리 304-6, 양감면 대양리 768</p>
@@ -2319,145 +2266,55 @@
             });
         });
 
-        // ===== 편집 모드 기능 =====
-        let editMode = false;
-        const editToggleBtn = document.getElementById('editToggleBtn');
-        const editableElements = document.querySelectorAll('.editable');
+        // ===== 탭 + 슬라이드 하이브리드 네비게이션 =====
+        // 모든 주요 섹션
+        const allSections = [
+            'hero', 'about', 'philosophy', 'services', 'equipment', 
+            'products', 'organization', 'certifications', 'contact'
+        ];
 
-        editToggleBtn.addEventListener('click', function() {
-            editMode = !editMode;
-            
-            if (editMode) {
-                editToggleBtn.textContent = '💾 저장';
-                editToggleBtn.classList.add('active');
-                enableEditMode();
-            } else {
-                editToggleBtn.textContent = '✏️ 편집';
-                editToggleBtn.classList.remove('active');
-                disableEditMode();
-                saveChanges();
-            }
-        });
-
-        function enableEditMode() {
-            editableElements.forEach(el => {
-                el.contentEditable = 'true';
-                el.classList.add('edit-mode');
-            });
-        }
-
-        function disableEditMode() {
-            editableElements.forEach(el => {
-                el.contentEditable = 'false';
-                el.classList.remove('edit-mode');
-            });
-        }
-
-        function saveChanges() {
-            const changes = {};
-            editableElements.forEach((el, index) => {
-                if (el.id) {
-                    changes[el.id] = el.innerHTML;
-                }
-            });
-            localStorage.setItem('websiteChanges', JSON.stringify(changes));
-            alert('✅ 변경사항이 저장되었습니다!');
-        }
-
-        function loadChanges() {
-            const saved = localStorage.getItem('websiteChanges');
-            if (saved) {
-                try {
-                    const changes = JSON.parse(saved);
-                    editableElements.forEach(el => {
-                        if (el.id && changes[el.id]) {
-                            el.innerHTML = changes[el.id];
-                        }
-                    });
-                } catch (e) {
-                    console.log('저장된 변경사항 로드 실패');
-                }
-            }
-        }
-
-        // 페이지 로드 시 저장된 변경사항 복원
-        window.addEventListener('load', loadChanges);
-
-        // ===== 탭 & 슬라이드 네비게이션 =====
-        const tabSections = {
-            'about': document.getElementById('about'),
-            'philosophy': document.getElementById('philosophy'),
-            'services': document.getElementById('services'),
-            'certifications': document.getElementById('certifications'),
-            'contact': document.getElementById('contact')
-        };
-
-        // 슬라이드 섹션 (탭 + 슬라이드)
-        const slideSections = ['equipment', 'products', 'organization'];
-
-        // 모든 섹션 초기화 (숨김)
-        function initializeAll() {
-            Object.values(tabSections).forEach(section => {
+        // 모든 섹션 숨김
+        function hideAllSections() {
+            allSections.forEach(sectionId => {
+                const section = document.getElementById(sectionId);
                 if (section) {
-                    section.classList.add('tab-hidden');
-                    section.classList.remove('tab-visible');
-                }
-            });
-            slideSections.forEach(name => {
-                const element = document.getElementById(name);
-                if (element) {
-                    element.classList.add('tab-hidden');
-                    element.classList.remove('tab-visible');
+                    section.classList.remove('visible');
                 }
             });
         }
 
-        // 특정 섹션 표시
-        function showSection(sectionName) {
-            // 모든 섹션 숨김
-            initializeAll();
-
-            // 선택된 섹션 표시
-            const section = tabSections[sectionName] || document.getElementById(sectionName);
+        // 특정 섹션만 표시
+        function showSection(sectionId) {
+            hideAllSections();
+            const section = document.getElementById(sectionId);
             if (section) {
-                section.classList.remove('tab-hidden');
-                section.classList.add('tab-visible');
-                window.scrollTo(0, 0);
+                section.classList.add('visible');
             }
         }
 
-        // 네비게이션 링크 클릭 이벤트
+        // 네비게이션 링크 클릭 이벤트 - 탭 방식
         document.querySelectorAll('.nav-menu a').forEach(link => {
             link.addEventListener('click', function(e) {
                 const href = this.getAttribute('href');
                 if (href && href.startsWith('#')) {
                     e.preventDefault();
-                    const sectionName = href.substring(1);
-                    showSection(sectionName);
+                    const sectionId = href.substring(1);
+                    showSection(sectionId);
+                    window.scrollTo(0, 0);
                 }
             });
-        });
-
-        // 페이지 로드 시 초기화 및 Hero 표시
-        window.addEventListener('load', function() {
-            initializeAll();
-            const heroSection = document.querySelector('.hero');
-            if (heroSection) {
-                heroSection.classList.remove('tab-hidden');
-                heroSection.classList.add('tab-visible');
-            }
         });
 
         // 로고 클릭 시 Hero 표시
         document.querySelector('.logo').addEventListener('click', function(e) {
             e.preventDefault();
-            initializeAll();
-            const heroSection = document.querySelector('.hero');
-            if (heroSection) {
-                heroSection.classList.remove('tab-hidden');
-                heroSection.classList.add('tab-visible');
-            }
+            showSection('hero');
             window.scrollTo(0, 0);
+        });
+
+        // 페이지 로드 시 Hero 표시
+        window.addEventListener('load', function() {
+            showSection('hero');
         });
 
         document.querySelector('.contact-form').addEventListener('submit', function(e) {
