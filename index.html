@@ -195,6 +195,15 @@
         }
 
         /* ===== Tab Navigation ===== */
+        /* ===== Tab Navigation ===== */
+        .tab-hidden {
+            display: none !important;
+        }
+
+        .tab-visible {
+            display: flex !important;
+        }
+
         /* ===== Hero Section ===== */
         .hero {
             position: relative;
@@ -309,7 +318,7 @@
         .section-title {
             font-size: 3.5rem;
             font-weight: 800;
-            margin-bottom: 2rem;
+            margin-bottom: 1rem;
             text-align: center;
             color: #ffffff;
             letter-spacing: -1.4px;
@@ -321,13 +330,13 @@
             width: 60px;
             height: 4px;
             background: #2563eb;
-            margin: 1rem auto 0;
+            margin: 0.8rem auto 0;
         }
 
         /* ===== About Section ===== */
         .about {
             background: linear-gradient(135deg, rgba(26, 26, 26, 0.8), rgba(30, 40, 60, 0.6));
-            padding: 3rem 2rem;
+            padding: 2rem 2rem;
             position: relative;
             z-index: 100;
             margin: 0;
@@ -341,32 +350,34 @@
         .about-content {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 2rem;
+            gap: 3rem;
             align-items: center;
         }
 
         .about-text h3 {
-            font-size: 1.8rem;
+            font-size: 2.2rem;
             color: #2563eb;
-            margin-bottom: 1rem;
+            margin-bottom: 1.5rem;
+            font-weight: 800;
         }
 
         .about-text p {
             color: #cccccc;
-            margin-bottom: 1.5rem;
-            line-height: 1.8;
+            margin-bottom: 1.8rem;
+            line-height: 1.9;
+            font-size: 1.1rem;
         }
 
         .about-features {
             display: flex;
             flex-direction: column;
-            gap: 1rem;
+            gap: 1.2rem;
         }
 
         .feature-item {
             display: flex;
             gap: 1rem;
-            padding: 1rem;
+            padding: 1.3rem;
             background: rgba(40, 50, 70, 0.6);
             border-left: 3px solid #2563eb;
             border-radius: 8px;
@@ -376,7 +387,7 @@
             content: '✓';
             color: #2563eb;
             font-weight: bold;
-            font-size: 1.3rem;
+            font-size: 1.5rem;
             flex-shrink: 0;
         }
 
@@ -386,7 +397,7 @@
 
         .about-image {
             position: relative;
-            height: 400px;
+            height: 500px;
             background: #2a2a2a;
             border-radius: 12px;
             overflow: hidden;
@@ -453,11 +464,11 @@
             position: relative;
             z-index: 100;
             background: linear-gradient(135deg, rgba(20, 25, 35, 0.8), rgba(30, 40, 60, 0.6));
-            min-height: auto;
+            min-height: 100vh;
             display: flex;
             flex-direction: column;
             justify-content: center;
-            padding: 3rem 2rem;
+            padding: 2rem 2rem;
             scroll-margin-top: 80px;
         }
 
@@ -1026,8 +1037,8 @@
             position: relative;
             z-index: 100;
             background: linear-gradient(135deg, rgba(26, 26, 26, 0.8), rgba(30, 40, 60, 0.6));
-            padding: 2.5rem 2rem;
-            min-height: auto;
+            padding: 2rem 2rem;
+            min-height: 100vh;
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -1175,6 +1186,11 @@
             position: relative;
             z-index: 100;
             background: linear-gradient(135deg, rgba(37, 99, 235, 0.15), rgba(15, 20, 25, 0.5));
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 2rem 2rem;
         }
 
         .contact-content {
@@ -2367,18 +2383,81 @@
         // 페이지 로드 시 저장된 변경사항 복원
         window.addEventListener('load', loadChanges);
 
-        // ===== 기본 스크롤 네비게이션 복구 =====
-        // 탭 네비게이션 제거 - 기본 앵커 방식 사용
+        // ===== 탭 & 슬라이드 네비게이션 =====
+        const tabSections = {
+            'about': document.getElementById('about'),
+            'philosophy': document.getElementById('philosophy'),
+            'services': document.getElementById('services'),
+            'certifications': document.getElementById('certifications'),
+            'contact': document.getElementById('contact')
+        };
+
+        // 슬라이드 섹션 (탭 + 슬라이드)
+        const slideSections = ['equipment', 'products', 'organization'];
+
+        // 모든 섹션 초기화 (숨김)
+        function initializeAll() {
+            Object.values(tabSections).forEach(section => {
+                if (section) {
+                    section.classList.add('tab-hidden');
+                    section.classList.remove('tab-visible');
+                }
+            });
+            slideSections.forEach(name => {
+                const element = document.getElementById(name);
+                if (element) {
+                    element.classList.add('tab-hidden');
+                    element.classList.remove('tab-visible');
+                }
+            });
+        }
+
+        // 특정 섹션 표시
+        function showSection(sectionName) {
+            // 모든 섹션 숨김
+            initializeAll();
+
+            // 선택된 섹션 표시
+            const section = tabSections[sectionName] || document.getElementById(sectionName);
+            if (section) {
+                section.classList.remove('tab-hidden');
+                section.classList.add('tab-visible');
+                window.scrollTo(0, 0);
+            }
+        }
+
+        // 네비게이션 링크 클릭 이벤트
         document.querySelectorAll('.nav-menu a').forEach(link => {
             link.addEventListener('click', function(e) {
                 const href = this.getAttribute('href');
                 if (href && href.startsWith('#')) {
-                    const element = document.getElementById(href.substring(1));
-                    if (element) {
-                        element.scrollIntoView({ behavior: 'smooth' });
-                    }
+                    e.preventDefault();
+                    const sectionName = href.substring(1);
+                    showSection(sectionName);
                 }
             });
+        });
+
+        // 페이지 로드 시 초기화 및 Hero 표시
+        window.addEventListener('load', function() {
+            initializeAll();
+            const heroSection = document.querySelector('.hero');
+            if (heroSection) {
+                heroSection.classList.remove('tab-hidden');
+                heroSection.classList.add('tab-visible');
+            }
+        });
+
+        // 로고 클릭 시 Hero 표시
+        document.querySelector('.logo').addEventListener('click', function(e) {
+            e.preventDefault();
+            initializeAll();
+            const heroSection = document.querySelector('.hero');
+            if (heroSection) {
+                heroSection.classList.remove('tab-hidden');
+                heroSection.classList.add('tab-visible');
+            }
+            window.scrollTo(0, 0);
         });
 
         document.querySelector('.contact-form').addEventListener('submit', function(e) {
