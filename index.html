@@ -155,7 +155,6 @@
             width: 100%;
             margin: 0;
             padding: 0;
-            
             align-items: center;
             justify-content: center;
             overflow: hidden;
@@ -258,12 +257,12 @@
             display: none !important;
         }
 
-        .hero {
-            display: flex !important;
-        }
-
         section.visible {
             display: block !important;
+        }
+
+        .hero.visible {
+            display: flex !important;
         }
 
         .about.visible {
@@ -1637,7 +1636,7 @@
     </header>
 
     <!-- Hero Section -->
-    <section id="hero" class="hero">
+    <section id="hero" class="hero visible">
         <div class="hero-content">
             <h1 id="hero-title">혁신 기술로<br><span class="highlight">미래를 만드는</span> NTL</h1>
             <p id="hero-subtitle">정밀 산업용 부품과 장비의 글로벌 리더</p>
@@ -2076,14 +2075,14 @@
                     <div class="manpower-item">
                         <div class="manpower-icon">📊</div>
                         <div class="manpower-stat">
-                            <div class="stat-number">25</div>
+                            <div class="stat-number">26</div>
                             <div class="stat-label">제조</div>
                         </div>
                     </div>
                     <div class="manpower-item">
                         <div class="manpower-icon">✓</div>
                         <div class="manpower-stat">
-                            <div class="stat-number">7</div>
+                            <div class="stat-number">6</div>
                             <div class="stat-label">품질</div>
                         </div>
                     </div>
@@ -2316,14 +2315,12 @@
             'products', 'organization', 'certifications', 'contact'
         ];
 
-        // 모든 섹션 숨김 (Hero 제외)
+        // 모든 섹션 숨김
         function hideAllSections() {
             allSections.forEach(sectionId => {
-                if (sectionId !== 'hero') {
-                    const section = document.getElementById(sectionId);
-                    if (section) {
-                        section.classList.remove('visible');
-                    }
+                const section = document.getElementById(sectionId);
+                if (section) {
+                    section.classList.remove('visible');
                 }
             });
         }
@@ -2353,7 +2350,7 @@
         // 로고 클릭 시 Hero 표시
         document.querySelector('.logo').addEventListener('click', function(e) {
             e.preventDefault();
-            window.scrollTo(0, 0);
+            showSection('hero');
         });
 
         // 문의하기 버튼 클릭 시
