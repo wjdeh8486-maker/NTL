@@ -17,8 +17,8 @@
 
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: #faf9f5;
-            color: #141413;
+            background: #1a1a1a;
+            color: #ffffff;
             line-height: 1.6;
         }
 
@@ -26,12 +26,12 @@
         header {
             position: sticky;
             top: 0;
-            background: rgba(255, 255, 255, 0.95);
+            background: rgba(26, 26, 26, 0.95);
             backdrop-filter: blur(10px);
             border-bottom: 1px solid rgba(59, 130, 246, 0.2);
             z-index: 1000;
             padding: 0;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
         }
 
         nav {
@@ -66,7 +66,7 @@
         .logo-name {
             font-size: 2rem;
             font-weight: 900;
-            color: #141413;
+            color: #ffffff;
             letter-spacing: -0.5px;
         }
 
@@ -93,9 +93,9 @@
 
         .nav-menu a {
             text-decoration: none;
-            color: #3d3d3a;
+            color: #cccccc;
             font-size: 1rem;
-            font-weight: 600;
+            font-weight: 700;
             transition: color 0.3s ease;
             position: relative;
         }
@@ -138,6 +138,54 @@
             transform: translateY(-2px);
             box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
             border-color: #1e40af;
+        }
+
+        /* ===== Edit Button (Small - Footer) ===== */
+        .edit-toggle-btn-small {
+            text-decoration: none;
+            color: white;
+            background: #1a1a1a;
+            padding: 0.4rem 0.8rem;
+            border-radius: 4px;
+            font-weight: 700;
+            font-size: 0.75rem;
+            transition: all 0.3s ease;
+            white-space: nowrap;
+            flex-shrink: 0;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            cursor: pointer;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        .edit-toggle-btn-small:hover {
+            background: #2a2a2a;
+            border-color: #ffffff;
+            box-shadow: 0 2px 6px rgba(255, 255, 255, 0.2);
+        }
+
+        .edit-toggle-btn-small.active {
+            background: #ef4444;
+            color: white;
+            border-color: #dc2626;
+        }
+
+        /* 편집 가능한 요소 스타일 */
+        .editable {
+            transition: all 0.2s ease;
+        }
+
+        .editable.edit-mode {
+            background: rgba(59, 130, 246, 0.2);
+            border: 2px solid #2563eb;
+            border-radius: 4px;
+            padding: 0.5rem;
+            cursor: text;
+            outline: none;
+        }
+
+        .editable.edit-mode:focus {
+            background: rgba(59, 130, 246, 0.3);
+            box-shadow: 0 0 8px rgba(37, 99, 235, 0.4);
         }
 
         /* ===== Hero Section ===== */
@@ -196,7 +244,7 @@
             font-weight: 900;
             margin-bottom: 1rem;
             line-height: 1.2;
-            color: #141413;
+            color: #ffffff;
         }
 
         .hero h1 .highlight {
@@ -208,10 +256,10 @@
 
         .hero p {
             font-size: 1.3rem;
-            color: #141413;
+            color: #cccccc;
             margin-bottom: 1.5rem;
             line-height: 1.8;
-            font-weight: 600;
+            font-weight: 700;
         }
 
         .cta-button {
@@ -255,7 +303,7 @@
             font-weight: 800;
             margin-bottom: 2rem;
             text-align: center;
-            color: #141413;
+            color: #ffffff;
             letter-spacing: -1.4px;
         }
 
@@ -270,7 +318,7 @@
 
         /* ===== About Section ===== */
         .about {
-            background: linear-gradient(135deg, rgba(255, 255, 255, 0.5), rgba(219, 234, 254, 0.3));
+            background: linear-gradient(135deg, rgba(26, 26, 26, 0.8), rgba(30, 40, 60, 0.6));
             padding: 3rem 2rem;
             position: relative;
             z-index: 100;
@@ -291,7 +339,7 @@
         }
 
         .about-text p {
-            color: #3d3d3a;
+            color: #cccccc;
             margin-bottom: 1.5rem;
             line-height: 1.8;
         }
@@ -306,7 +354,7 @@
             display: flex;
             gap: 1rem;
             padding: 1rem;
-            background: rgba(224, 242, 254, 0.4);
+            background: rgba(40, 50, 70, 0.6);
             border-left: 3px solid #2563eb;
             border-radius: 8px;
         }
@@ -320,17 +368,17 @@
         }
 
         .feature-item span {
-            color: #141413;
+            color: #cccccc;
         }
 
         .about-image {
             position: relative;
             height: 400px;
-            background: #e0e7ff;
+            background: #2a2a2a;
             border-radius: 12px;
             overflow: hidden;
-            box-shadow: rgba(20, 18, 21, 0.12) 0px 12px 24px;
-            border: 2px solid rgba(37, 99, 235, 0.2);
+            box-shadow: rgba(0, 0, 0, 0.5) 0px 12px 24px;
+            border: 2px solid rgba(37, 99, 235, 0.3);
             display: flex;
             align-items: center;
             justify-content: center;
@@ -344,10 +392,10 @@
         }
 
         /* ===== Philosophy Section ===== */
-        \.philosophy{
+        .philosophy {
             position: relative;
             z-index: 100;
-            background: #f5f0e8;
+            background: #1a1a1a;
         }
 
         .philosophy-grid {
@@ -357,17 +405,17 @@
         }
 
         .philosophy-card {
-            background: linear-gradient(135deg, rgba(219, 234, 254, 0.4), rgba(37, 99, 235, 0.05));
+            background: linear-gradient(135deg, rgba(40, 50, 70, 0.5), rgba(37, 99, 235, 0.1));
             padding: 2rem;
             border-radius: 8px;
-            border: 1px solid rgba(230, 223, 216, 0.5);
+            border: 1px solid rgba(59, 130, 246, 0.3);
             transition: all 0.3s ease;
         }
 
         .philosophy-card:hover {
             transform: translateY(-5px);
             border-color: #2563eb;
-            box-shadow: 0 10px 30px rgba(219, 234, 254, 0.4);
+            box-shadow: 0 10px 30px rgba(37, 99, 235, 0.2);
         }
 
         .philosophy-card h4 {
@@ -377,15 +425,15 @@
         }
 
         .philosophy-card p {
-            color: #3d3d3a;
+            color: #cccccc;
             line-height: 1.8;
         }
 
         /* ===== Services Section ===== */
-        \.services{
+        .services {
             position: relative;
             z-index: 100;
-            background: linear-gradient(135deg, rgba(15, 20, 25, 0.5), rgba(37, 99, 235, 0.08));
+            background: linear-gradient(135deg, rgba(20, 25, 35, 0.8), rgba(30, 40, 60, 0.6));
         }
 
         .service-container {
@@ -422,11 +470,11 @@
             font-size: 1.1rem;
             color: #2563eb;
             margin-bottom: 1.5rem;
-            font-weight: 600;
+            font-weight: 700;
         }
 
         .service-description {
-            background: rgba(224, 242, 254, 0.4);
+            background: rgba(40, 50, 70, 0.6);
             padding: 1.5rem;
             border-left: 4px solid #2563eb;
             border-radius: 8px;
@@ -434,7 +482,7 @@
         }
 
         .service-description p {
-            color: #3d3d3a;
+            color: #cccccc;
             line-height: 1.8;
             margin: 0;
         }
@@ -443,7 +491,7 @@
             display: inline-block;
             color: #2563eb;
             text-decoration: none;
-            font-weight: 600;
+            font-weight: 700;
             font-size: 1.05rem;
             transition: all 0.3s ease;
             padding: 0.5rem 1rem;
@@ -451,7 +499,7 @@
         }
 
         .detail-link:hover {
-            background: rgba(224, 242, 254, 0.5);
+            background: rgba(40, 50, 70, 0.6);
             transform: translateX(5px);
         }
 
@@ -469,7 +517,8 @@
             object-fit: cover;
             display: block;
         }
-        \.process{
+
+        .process {
             position: relative;
             z-index: 100;
             background: linear-gradient(135deg, rgba(15, 20, 25, 0.5), rgba(37, 99, 235, 0.08));
@@ -490,68 +539,201 @@
         }
 
         /* ===== Equipment Section ===== */
-        \.equipment{
+        .equipment {
+            background: linear-gradient(135deg, rgba(26, 26, 26, 0.8), rgba(30, 40, 60, 0.6));
             position: relative;
             z-index: 100;
-            background: #f5f0e8;
+            padding: 2.5rem 2rem;
+        }
+
+        .equipment-category {
+            margin-bottom: 4rem;
+        }
+
+        .category-title {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: #ffffff;
+            text-align: left;
+            margin-bottom: 2rem;
+            padding-bottom: 1rem;
+            border-bottom: 3px solid #2563eb;
         }
 
         .equipment-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: 1fr;
             gap: 2rem;
             margin-bottom: 1.5rem;
         }
 
-        .equipment-card {
-            background: #faf9f5;
-            border: 1px solid rgba(59, 130, 246, 0.3);
-            border-radius: 8px;
-            overflow: hidden;
-            transition: all 0.3s ease;
+        .equipment-grid-3 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+            margin-bottom: 1.5rem;
         }
 
-        .equipment-card:hover {
-            border-color: #2563eb;
-            box-shadow: 0 10px 30px rgba(59, 130, 246, 0.15);
+        .equipment-item {
+            background: #2a2a2a;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .equipment-item:hover {
             transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(37, 99, 235, 0.2);
         }
 
         .equipment-image {
             width: 100%;
-            height: 200px;
-            background: linear-gradient(135deg, #1e3a8a, #2563eb);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            overflow: hidden;
+           height: auto;
+           overflow: visible;
+           background: #1a1a1a;
         }
 
         .equipment-image img {
             width: 100%;
-            height: 100%;
+            height: auto;
             object-fit: cover;
         }
 
         .equipment-info {
-            padding: 1.5rem;
+            padding: 2rem;
         }
 
-        .equipment-info h5 {
-            color: #2563eb;
+        .equipment-info h4 {
+            font-size: 1.4rem;
+            font-weight: 800;
+            color: #ffffff;
+            margin-bottom: 1.5rem;
+        }
+
+        .equipment-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+            gap: 1rem;
+        }
+
+        .stat-box {
+            background: linear-gradient(135deg, #2563eb 0%, #1e40af 100%);
+            padding: 1.2rem 1rem;
+            border-radius: 8px;
+            text-align: center;
+            box-shadow: 0 2px 8px rgba(37, 99, 235, 0.2);
+            transition: transform 0.3s ease;
+        }
+
+        .stat-box:hover {
+            transform: scale(1.05);
+        }
+
+        .stat-label {
+            font-size: 0.85rem;
+            color: rgba(26, 26, 26, 0.8);
+            font-weight: 700;
             margin-bottom: 0.5rem;
         }
 
-        .equipment-info p {
-            color: #3d3d3a;
-            font-size: 0.95rem;
+        .stat-value {
+            font-size: 1.6rem;
+            font-weight: 900;
+            color: white;
+            line-height: 1;
+        }
+
+        .machining-details-toggle {
+            cursor: pointer !important;
+            transition: all 0.3s ease;
+        }
+
+        .machining-details-toggle:hover {
+            transform: scale(1.05) !important;
+            box-shadow: 0 4px 16px rgba(37, 99, 235, 0.4) !important;
+        }
+
+        .detail-table {
+            width: 100%;
+            border-collapse: collapse;
+            background: #2a2a2a;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+        }
+
+        .detail-table thead {
+            background: linear-gradient(135deg, #2563eb 0%, #1e40af 100%);
+        }
+
+        .detail-table th {
+            padding: 1rem;
+            color: white;
+            font-weight: 700;
+            text-align: center;
+            border-right: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .detail-table th:last-child {
+            border-right: none;
+        }
+
+        .detail-table td {
+            padding: 0.8rem 1rem;
+            text-align: center;
+            border-bottom: 1px solid rgba(59, 130, 246, 0.3);
+            color: #ffffff;
+            font-weight: 700;
+        }
+
+        .detail-table tbody tr:hover {
+            background: rgba(37, 99, 235, 0.15);
+        }
+
+        .detail-table tbody tr:last-child {
+            border-bottom: none;
+        }
+
+        .detail-table tbody tr:first-child td {
+            border-top: 1px solid rgba(59, 130, 246, 0.3);
+        }
+
+        .table-total {
+            background: linear-gradient(135deg, rgba(37, 99, 235, 0.2) 0%, rgba(30, 64, 175, 0.2) 100%);
+            font-weight: 700;
+            color: #2563eb;
+        }
+
+        .total-count {
+            color: #2563eb;
+            font-weight: 900;
+            font-size: 1.1rem;
+        }
+
+        .detail-close-btn {
+            margin-top: 1.5rem;
+            padding: 0.8rem 2rem;
+            background: linear-gradient(135deg, #2563eb 0%, #1e40af 100%);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 8px rgba(37, 99, 235, 0.3);
+        }
+
+        .detail-close-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(37, 99, 235, 0.4);
         }
 
         /* ===== Products Section ===== */
-        \.products{
+        .products {
             position: relative;
             z-index: 100;
-            background: linear-gradient(135deg, rgba(15, 20, 25, 0.5), rgba(37, 99, 235, 0.08));
+            background: linear-gradient(135deg, rgba(20, 25, 35, 0.8), rgba(30, 40, 60, 0.6));
         }
 
         .products-image {
@@ -568,13 +750,52 @@
             display: block;
         }
 
+        .product-category {
+            margin-bottom: 1.5rem;
+        }
+
+        .product-images-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .product-image-box {
+            background: #2a2a2a;
+            border-radius: 12px;
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .product-image-box:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 24px rgba(37, 99, 235, 0.2);
+        }
+
+        .product-image-box img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .product-images-grid-4 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
         /* ===== Organization Section ===== */
         .organization {
-            background: #f5f0e8;
+            background: #1a1a1a;
         }
 
         .org-intro {
-            background: rgba(224, 242, 254, 0.4);
+            background: rgba(40, 50, 70, 0.6);
             padding: 2rem;
             border-radius: 12px;
             border-left: 4px solid #2563eb;
@@ -588,11 +809,11 @@
         }
 
         .org-intro p {
-            color: #3d3d3a;
+            color: #cccccc;
             line-height: 1.8;
         }
 
-        \.org-structure{
+        .org-structure {
             position: relative;
             z-index: 100;
             display: flex;
@@ -637,7 +858,7 @@
         .dept-box p {
             font-size: 1rem;
             line-height: 1.7;
-            font-weight: 500;
+            font-weight: 700;
             letter-spacing: 0.3px;
         }
 
@@ -661,354 +882,73 @@
             color: #ffffff;
         }
 
-        /* Org Chart */
-        /* Org Chart with SVG */
-        .org-chart-container-old {
-            position: relative;
-            background: #f5f0e8;
-            padding: 2rem 2rem 1rem 2rem;
-            border-radius: 12px;
-            border: 1px solid rgba(230, 223, 216, 0.5);
-            margin-bottom: 1.5rem;
-        }
-
-        .org-chart-svg-container::before {
-            content: '상세 조직도';
-            position: absolute;
-            top: 15px;
-            left: 50%;
-            transform: translateX(-50%);
-            font-size: 1.3rem;
-            font-weight: 700;
-            color: #2563eb;
-        }
-
-        .org-svg {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            pointer-events: none;
-        }
-
+        /* Org Chart Container - 더 크게 확대 */
         .org-chart-container {
-            background: rgba(239, 233, 222, 0.6);
-            padding: 2rem;
+            background: rgba(26, 26, 26, 0.8);
+            padding: 5rem 2rem;
             border-radius: 12px;
-            border: 1px solid rgba(230, 223, 216, 0.5);
-        }
-
-        .org-chart-title-old {
-            font-size: 1.3rem;
-            font-weight: 700;
-            color: #2563eb;
-            margin-bottom: 1.5rem;
-            text-align: center;
-        }
-
-        .org-level-ceo-old {
-            position: relative;
-            z-index: 2;
-            display: flex;
-            justify-content: center;
-            margin-bottom: 1.5rem;
-            position: relative;
-            z-index: 2;
-        }
-
-        .org-position {
-            background: linear-gradient(135deg, #2563eb, #1e40af);
-            color: white;
-            padding: 1rem 2rem;
-            border-radius: 8px;
-            font-weight: 600;
-            min-width: 150px;
-            text-align: center;
-        }
-
-        .org-level-dept {
-            position: relative;
-            z-index: 2;
-            display: flex;
-            justify-content: space-between;
-            margin-bottom: 1.5rem;
-            gap: 2rem;
-        }
-
-        .org-box-container {
-            flex: 1;
-            display: flex;
-            justify-content: center;
-        }
-
-        .org-position-box {
-            background: linear-gradient(135deg, #1e40af, #1e3a8a);
-            color: white;
-            padding: 0.8rem 1.5rem;
-            border-radius: 8px;
-            font-weight: 600;
-            text-align: center;
-            min-width: 120px;
-        }
-
-        .org-level-teams {
-            position: relative;
-            z-index: 2;
-            display: flex;
-            justify-content: space-between;
-            margin-bottom: 1.5rem;
-            gap: 2rem;
-        }
-
-        .team-group {
-            flex: 1;
-            display: flex;
-            gap: 1rem;
-            flex-wrap: wrap;
-            justify-content: center;
-        }
-
-        .team-box {
-            background: rgba(224, 242, 254, 0.5);
-            color: #2563eb;
-            padding: 0.6rem 1rem;
-            border-radius: 8px;
-            font-size: 0.95rem;
-            font-weight: 600;
             border: 1px solid rgba(59, 130, 246, 0.3);
-        }
-
-        .org-level-divisions {
-            position: relative;
-            z-index: 2;
-            display: flex;
-            justify-content: center;
-            gap: 1.5rem;
-            margin-bottom: 1.5rem;
-        }
-
-        .division-box {
-            background: rgba(37, 99, 235, 0.15);
-            padding: 1rem 1.5rem;
-            border-radius: 8px;
-            border: 2px solid rgba(230, 223, 216, 0.5);
-        }
-
-        .division-label {
-            color: #2563eb;
-            font-weight: 600;
-            text-align: center;
-        }
-
-        /* ===== Organization Chart (New) ===== */
-        .org-chart-container {
-            background: rgba(245, 240, 232, 0.8);
-            padding: 3rem 2rem;
-            border-radius: 12px;
-            border: 1px solid rgba(207, 69, 0, 0.5);
             margin-bottom: 1.5rem;
         }
 
         .org-chart-container .section-title {
-            margin-bottom: 1.5rem;
+            margin-bottom: 2.5rem;
+            font-size: 3rem;
         }
 
-        /* CEO Level -->
-        .org-level-1 {
-            display: flex;
-            justify-content: center;
-            margin-bottom: 2rem;
+        .org-chart-container img {
+            width: 100%;
+            max-width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 8px;
         }
 
-        /* Separator Line -->
-        .org-separator-line {
-            height: 3px;
-            background: #faf9f5;
-            margin-bottom: 1.5rem;
-            position: relative;
-        }
-
-        /* Departments Level -->
-        .org-level-2 {
-            display: flex;
-            justify-content: center;
-            gap: 8rem;
-            margin-bottom: 2rem;
-            position: relative;
-        }
-
-        .org-level-2::before {
-            content: '';
-            position: absolute;
-            width: calc(100% - 4rem);
-            height: 3px;
-            background: #faf9f5;
-            top: -3rem;
-            left: 50%;
-            transform: translateX(-50%);
-        }
-
-        /* Teams Level -->
-        .org-level-3 {
-            display: flex;
-            justify-content: center;
-            gap: 2rem;
-            margin-bottom: 2rem;
-            position: relative;
-            flex-wrap: wrap;
-        }
-
-        .org-level-3::before {
-            content: '';
-            position: absolute;
-            width: calc(100% - 2rem);
-            height: 3px;
-            background: #faf9f5;
-            top: -3rem;
-            left: 50%;
-            transform: translateX(-50%);
-        }
-
-        .org-team-column {
-            display: flex;
-            flex-direction: column;
-            gap: 1rem;
-            align-items: center;
-            position: relative;
-        }
-
-        .org-team-column::before {
-            content: '';
-            position: absolute;
-            width: 3px;
-            height: 3rem;
-            background: #faf9f5;
-            top: -3rem;
-            left: 50%;
-            transform: translateX(-50%);
-        }
-
-        .org-team-column::after {
-            content: '';
-            position: absolute;
-            width: 3px;
-            height: 2rem;
-            background: #faf9f5;
-            bottom: -2rem;
-            left: 50%;
-            transform: translateX(-50%);
-        }
-
-        /* Divisions Level -->
-        .org-level-4 {
-            display: flex;
-            justify-content: center;
-            gap: 2rem;
-            margin-top: 1rem;
-            flex-wrap: wrap;
-        }
-
-        /* Box Styles -->
-        .org-box {
-            background: #181715;
-            color: white;
-            padding: 0.8rem 1.5rem;
-            border-radius: 12px;
-            font-weight: 600;
-            font-size: 1rem;
-            text-align: center;
-            box-shadow: 0 4px 12px rgba(20, 18, 21, 0.1);
-            white-space: nowrap;
-        }
-
-        .ceo-box {
-            min-width: 200px;
-            padding: 1rem 2rem;
-            font-size: 1.1rem;
-        }
-
-        .dept-box {
-            min-width: 160px;
-            position: relative;
-        }
-
-        .dept-box::before {
-            content: '';
-            position: absolute;
-            width: 3px;
-            height: 3rem;
-            background: #faf9f5;
-            top: 100%;
-            left: 50%;
-            transform: translateX(-50%);
-        }
-
-        .team-box {
-            min-width: 130px;
-        }
-
-        .org-sub-box {
-            background: #181715;
-            color: white;
-            padding: 0.7rem 1.3rem;
-            border-radius: 10px;
-            font-weight: 600;
-            font-size: 0.95rem;
-            text-align: center;
-            box-shadow: 0 4px 12px rgba(20, 18, 21, 0.1);
-            min-width: 120px;
-        }
-
-        .div-box {
-            min-width: 130px;
-        }
-
-        /* Manpower Section */
+        /* Manpower Section - 50% 축소 */
         .manpower-section {
-            background: linear-gradient(135deg, #f5f0e8 0%, #efe9de 100%);
-            padding: 2.5rem;
-            border-radius: 16px;
+            background: linear-gradient(135deg, rgba(40, 50, 70, 0.5), rgba(30, 40, 60, 0.5));
+            padding: 0.75rem;
+            border-radius: 12px;
             border: 2px solid #2563eb;
             margin-top: 1rem;
-            box-shadow: 0 4px 12px rgba(37, 99, 235, 0.1);
+            box-shadow: 0 2px 8px rgba(37, 99, 235, 0.15);
         }
 
         .manpower-section h4 {
-            font-size: 1.6rem;
+            font-size: 1rem;
             font-weight: 800;
             color: #2563eb;
-            margin-bottom: 2rem;
+            margin-bottom: 0.8rem;
             text-align: center;
         }
 
         .manpower-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-            gap: 2rem;
-            margin-bottom: 2.5rem;
+            grid-template-columns: repeat(auto-fit, minmax(90px, 1fr));
+            gap: 0.7rem;
+            margin-bottom: 0.7rem;
         }
 
         .manpower-item {
             display: flex;
             flex-direction: column;
             align-items: center;
-            gap: 1rem;
-            padding: 2rem 1.5rem;
+            gap: 0.3rem;
+            padding: 0.65rem 0.5rem;
             background: linear-gradient(135deg, #2563eb 0%, #1e40af 100%);
-            border-radius: 12px;
-            border: 3px solid #1e40af;
+            border-radius: 8px;
+            border: 2px solid #1e40af;
             transition: all 0.3s ease;
-            box-shadow: 0 4px 12px rgba(37, 99, 235, 0.2);
+            box-shadow: 0 2px 6px rgba(37, 99, 235, 0.15);
         }
 
         .manpower-item:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 8px 20px rgba(37, 99, 235, 0.3);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 10px rgba(37, 99, 235, 0.2);
         }
 
         .manpower-icon {
-            font-size: 2.5rem;
+            font-size: 1.3rem;
             line-height: 1;
         }
 
@@ -1017,54 +957,51 @@
         }
 
         .stat-number {
-            font-size: 2.4rem;
+            font-size: 1.2rem;
             font-weight: 900;
             color: white;
             line-height: 1;
-            margin-bottom: 0.3rem;
+            margin-bottom: 0.1rem;
         }
 
         .stat-label {
-            font-size: 1.1rem;
+            font-size: 0.65rem;
             font-weight: 700;
-            color: rgba(255, 255, 255, 0.95);
-        }
-            color: #64748b;
-            margin-top: 0.3rem;
+            color: rgba(26, 26, 26, 0.95);
         }
 
         .experience-info {
-            padding: 1.5rem;
-            background: linear-gradient(135deg, #e0f2fe 0%, #f0f9ff 100%);
-            border-left: 5px solid #2563eb;
-            border-radius: 8px;
-            border: 1px solid #2563eb;
-            margin-top: 1.5rem;
+            padding: 0.6rem;
+            background: rgba(40, 50, 70, 0.6);
+            border-left: 3px solid #2563eb;
+            border-radius: 6px;
+            border: 1px solid rgba(37, 99, 235, 0.3);
+            margin-top: 0.6rem;
         }
 
         .experience-info p {
-            color: #141413;
+            color: #ffffff;
             margin: 0;
-            font-size: 1rem;
-            font-weight: 600;
-            line-height: 1.6;
+            font-size: 0.75rem;
+            font-weight: 700;
+            line-height: 1.4;
         }
 
         /* ===== Certifications Section ===== */
         .certifications {
             position: relative;
             z-index: 100;
-            background: linear-gradient(135deg, #f5f0e8 0%, #efe9de 100%);
+            background: linear-gradient(135deg, rgba(26, 26, 26, 0.8), rgba(30, 40, 60, 0.6));
             padding: 2.5rem 2rem;
         }
 
         .section-subtitle {
             text-align: center;
-            color: #3d3d3a;
+            color: #cccccc;
             font-size: 1.1rem;
             margin-top: -1rem;
             margin-bottom: 1.5rem;
-            font-weight: 600;
+            font-weight: 700;
         }
 
         .certifications-grid {
@@ -1117,7 +1054,7 @@
             color: rgba(255, 255, 255, 0.9);
             font-size: 0.85rem;
             margin: 0.5rem 0 0 0;
-            font-weight: 600;
+            font-weight: 700;
         }
 
         .certification-content-simple {
@@ -1130,7 +1067,7 @@
         .certification-image {
             width: 100%;
             height: 200px;
-            background: #f5f0e8;
+            background: #1a1a1a;
             border-radius: 8px;
             overflow: hidden;
             box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
@@ -1147,7 +1084,7 @@
             flex-direction: column;
             gap: 0.4rem;
             padding: 0.8rem;
-            background: #f5f0e8;
+            background: #1a1a1a;
             border-radius: 6px;
             border-left: 3px solid #2563eb;
         }
@@ -1159,59 +1096,9 @@
         }
 
         .detail-item-simple .detail-value {
-            color: #3d3d3a;
+            color: #cccccc;
             font-size: 0.9rem;
-            font-weight: 600;
-        }
-
-        .certification-content {
-            padding: 2rem;
-            display: grid;
-            grid-template-columns: 1fr 1.2fr;
-            gap: 1.5rem;
-            align-items: start;
-        }
-
-        .certification-info h4 {
-            font-size: 1.2rem;
-            color: #2563eb;
-            margin: 0 0 0.5rem 0;
-            font-weight: 800;
-        }
-
-        .certification-description {
-            color: #3d3d3a;
-            font-size: 0.95rem;
-            margin-bottom: 1.5rem;
-            font-weight: 600;
-        }
-
-        .certification-details {
-            display: flex;
-            flex-direction: column;
-            gap: 1rem;
-        }
-
-        .detail-item {
-            display: flex;
-            gap: 1rem;
-            padding: 0.8rem;
-            background: #f5f0e8;
-            border-radius: 8px;
-            border-left: 3px solid #2563eb;
-        }
-
-        .detail-label {
             font-weight: 700;
-            color: #2563eb;
-            min-width: 70px;
-            font-size: 0.9rem;
-        }
-
-        .detail-value {
-            color: #3d3d3a;
-            font-size: 0.9rem;
-            font-weight: 600;
         }
 
         .certifications-description {
@@ -1223,11 +1110,11 @@
         }
 
         .description-box {
-            background: white;
+            background: #2a2a2a;
             padding: 2rem;
             border-radius: 12px;
             border-left: 5px solid #2563eb;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
         }
 
         .description-box h4 {
@@ -1238,14 +1125,14 @@
         }
 
         .description-box p {
-            color: #3d3d3a;
+            color: #cccccc;
             line-height: 1.6;
             font-size: 0.95rem;
             margin: 0;
         }
 
         /* ===== Contact Section ===== */
-        \.contact{
+        .contact {
             position: relative;
             z-index: 100;
             background: linear-gradient(135deg, rgba(37, 99, 235, 0.15), rgba(15, 20, 25, 0.5));
@@ -1275,15 +1162,15 @@
         }
 
         .contact-label {
-            color: #64748b;
+            color: #888888;
             font-size: 0.95rem;
-            font-weight: 500;
+            font-weight: 700;
             text-transform: uppercase;
             letter-spacing: 0.5px;
         }
 
         .contact-value {
-            color: #141413;
+            color: #ffffff;
             font-size: 1.1rem;
             margin-top: 0.5rem;
         }
@@ -1297,10 +1184,10 @@
         .contact-form input,
         .contact-form textarea {
             padding: 0.8rem;
-            background: #f5f0e8;
-            border: 1px solid #e6dfd8;
+            background: #1a1a1a;
+            border: 1px solid rgba(59, 130, 246, 0.3);
             border-radius: 8px;
-            color: #141413;
+            color: #ffffff;
             font-family: inherit;
             font-size: 1rem;
         }
@@ -1316,7 +1203,7 @@
             color: white;
             border: none;
             border-radius: 8px;
-            font-weight: 600;
+            font-weight: 700;
             cursor: pointer;
             transition: all 0.3s ease;
         }
@@ -1328,11 +1215,11 @@
 
         /* ===== Footer ===== */
         footer {
-            background: rgba(255, 255, 255, 0.8);
+            background: rgba(26, 26, 26, 0.8);
             border-top: 1px solid rgba(59, 130, 246, 0.2);
             padding: 2rem 3rem;
             text-align: center;
-            color: #64748b;
+            color: #888888;
         }
 
         .footer-content {
@@ -1349,7 +1236,7 @@
         }
 
         .footer-links a {
-            color: #64748b;
+            color: #888888;
             text-decoration: none;
             transition: color 0.3s ease;
         }
@@ -1380,7 +1267,7 @@
             position: relative;
             overflow: hidden;
             border-radius: 12px;
-            background: #f5f0e8;
+            background: #1a1a1a;
             padding: 0;
             margin: 0;
         }
@@ -1399,76 +1286,206 @@
             margin: 0;
         }
 
+        /* ===== Image Auto Optimization ===== */
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .equipment-image,
+        .service-image,
+        .product-image-box,
+        .certification-image {
+            width: 100%;
+            height: auto;
+            overflow: visible;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .equipment-image img,
+        .service-image img,
+        .product-image-box img,
+        .certification-image img {
+            width: 100%;
+            height: auto;
+            object-fit: contain;
+        }
+
         /* ===== Responsive ===== */
         @media (max-width: 768px) {
+            .hero {
+                min-height: 60vh;
+            }
+
             .hero h1 {
-                font-size: 3.5rem;
+                font-size: 2.2rem;
             }
 
             .hero p {
-                font-size: 1.05rem;
+                font-size: 0.95rem;
             }
 
             nav {
-                padding: 1rem;
+                padding: 0.8rem 0.5rem;
+            }
+
+            .logo-name {
+                font-size: 1.5rem;
+            }
+
+            .logo-slogan {
+                font-size: 0.65rem;
             }
 
             .nav-menu {
-                gap: 1rem;
-                font-size: 0.85rem;
+                gap: 0.5rem;
+                font-size: 0.7rem;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .nav-contact {
+                padding: 0.5rem 1rem;
+                font-size: 0.8rem;
             }
 
             .section-title {
-                font-size: 1.8rem;
+                font-size: 1.5rem;
+                margin-bottom: 1rem;
+            }
+
+            .section-title::after {
+                margin: 0.5rem auto 0;
+            }
+
+            section {
+                padding: 1.5rem 0.8rem;
+                margin: 0;
             }
 
             .about-content {
                 grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+
+            .about-image {
+                height: 250px;
             }
 
             .contact-content {
                 grid-template-columns: 1fr;
-            }
-
-            .org-content {
-                grid-template-columns: 1fr;
-            }
-
-            .org-level-dept {
-            position: relative;
-            z-index: 2;
-                flex-direction: column;
-            }
-
-            .org-level-teams {
-            position: relative;
-            z-index: 2;
-                flex-direction: column;
+                gap: 1.5rem;
             }
 
             .org-departments {
-                grid-template-columns: 1fr;
+                grid-template-columns: 1fr 1fr;
+                gap: 0.8rem;
+            }
+
+            .dept-box {
+                padding: 1rem;
+            }
+
+            .dept-box h4 {
+                font-size: 1.1rem;
+                margin-bottom: 0.5rem;
+            }
+
+            .dept-box p {
+                font-size: 0.85rem;
+            }
+
+            .org-chart-container {
+                padding: 1.5rem 0.8rem;
+            }
+
+            .org-chart-container .section-title {
+                font-size: 1.2rem;
+                margin-bottom: 1rem;
             }
 
             .manpower-grid {
-                grid-template-columns: 1fr 1fr;
+                grid-template-columns: repeat(2, 1fr);
+                gap: 0.5rem;
+                margin-bottom: 0.5rem;
+            }
+
+            .manpower-section {
+                padding: 0.5rem;
+                margin-top: 0.8rem;
+            }
+
+            .manpower-section h4 {
+                font-size: 0.9rem;
+                margin-bottom: 0.6rem;
             }
 
             .philosophy-grid {
                 grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+
+            .philosophy-card {
+                padding: 1.2rem;
+            }
+
+            .philosophy-card h4 {
+                font-size: 1.2rem;
+                margin-bottom: 0.8rem;
+            }
+
+            .philosophy-card p {
+                font-size: 0.9rem;
             }
 
             .equipment-grid {
                 grid-template-columns: 1fr;
             }
 
+            .equipment-grid-3 {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .equipment-item {
+                margin-bottom: 1.5rem;
+            }
+
+            .equipment-info {
+                padding: 1rem;
+            }
+
+            .equipment-info h4 {
+                font-size: 1.1rem;
+                margin-bottom: 1rem;
+            }
+
+            .equipment-stats {
+                gap: 0.5rem;
+            }
+
+            .stat-box {
+                padding: 0.8rem 0.6rem;
+            }
+
+            .stat-value {
+                font-size: 1.2rem;
+            }
+
             .service-content {
                 flex-direction: column !important;
-                gap: 2rem;
+                gap: 1.5rem;
             }
 
             .service-text {
                 min-width: auto;
+            }
+
+            .service-text h3 {
+                font-size: 2rem;
             }
 
             .service-image {
@@ -1476,272 +1493,9 @@
             }
 
             .service-image img {
-                height: 250px;
+                height: 200px;
             }
 
-            section {
-                padding: 3rem 1rem;
-            }
-        }
-        .equipment {
-            background: linear-gradient(135deg, rgba(255, 255, 255, 0.5), rgba(219, 234, 254, 0.3));
-            position: relative;
-            z-index: 100;
-            padding: 2.5rem 2rem;
-        }
-
-        .equipment-category {
-            margin-bottom: 4rem;
-        }
-
-        .category-title {
-            font-size: 1.8rem;
-            font-weight: 800;
-            color: #141413;
-            text-align: left;
-            margin-bottom: 2rem;
-            padding-bottom: 1rem;
-            border-bottom: 3px solid #2563eb;
-        }
-
-        .equipment-grid {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 2rem;
-            margin-bottom: 1.5rem;
-        }
-
-        .equipment-grid-3 {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 2rem;
-            margin-bottom: 1.5rem;
-        }
-
-        .equipment-item {
-            background: white;
-            border-radius: 12px;
-            overflow: hidden;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .equipment-item:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 20px rgba(37, 99, 235, 0.15);
-        }
-
-        .equipment-image {
-            width: 100%;
-           height: auto;         /* ✅ 변경 */
-           overflow: visible;
-           background: #f5f0e8;
-        }
-
-        .equipment-image img {
-            width: 100%;
-            height: auto;
-            object-fit: cover;
-        }
-
-        .equipment-info {
-            padding: 2rem;
-        }
-
-        .equipment-info h4 {
-            font-size: 1.4rem;
-            font-weight: 800;
-            color: #141413;
-            margin-bottom: 1.5rem;
-        }
-
-        .equipment-stats {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
-            gap: 1rem;
-        }
-
-        .stat-box {
-            background: linear-gradient(135deg, #2563eb 0%, #1e40af 100%);
-            padding: 1.2rem 1rem;
-            border-radius: 8px;
-            text-align: center;
-            box-shadow: 0 2px 8px rgba(37, 99, 235, 0.2);
-            transition: transform 0.3s ease;
-        }
-
-        .stat-box:hover {
-            transform: scale(1.05);
-        }
-
-        .stat-label {
-            font-size: 0.85rem;
-            color: rgba(255, 255, 255, 0.8);
-            font-weight: 600;
-            margin-bottom: 0.5rem;
-        }
-
-        .stat-value {
-            font-size: 1.6rem;
-            font-weight: 900;
-            color: white;
-            line-height: 1;
-        }
-
-        .machining-details-toggle {
-            cursor: pointer !important;
-            transition: all 0.3s ease;
-        }
-
-        .machining-details-toggle:hover {
-            transform: scale(1.05) !important;
-            box-shadow: 0 4px 16px rgba(37, 99, 235, 0.4) !important;
-        }
-
-        .detail-table {
-            width: 100%;
-            border-collapse: collapse;
-            background: white;
-            border-radius: 8px;
-            overflow: hidden;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-        }
-
-        .detail-table thead {
-            background: linear-gradient(135deg, #2563eb 0%, #1e40af 100%);
-        }
-
-        .detail-table th {
-            padding: 1rem;
-            color: white;
-            font-weight: 700;
-            text-align: center;
-            border-right: 1px solid rgba(255, 255, 255, 0.2);
-        }
-
-        .detail-table th:last-child {
-            border-right: none;
-        }
-
-        .detail-table td {
-            padding: 0.8rem 1rem;
-            text-align: center;
-            border-bottom: 1px solid #e6dfd8;
-            color: #3d3d3a;
-            font-weight: 500;
-        }
-
-        .detail-table tbody tr:hover {
-            background: #f5f0e8;
-        }
-
-        .detail-table tbody tr:last-child {
-            border-bottom: none;
-        }
-
-        .detail-table tbody tr:first-child td {
-            border-top: 1px solid #e6dfd8;
-        }
-
-        .table-total {
-            background: linear-gradient(135deg, rgba(37, 99, 235, 0.1) 0%, rgba(30, 64, 175, 0.1) 100%);
-            font-weight: 700;
-            color: #2563eb;
-        }
-
-        .total-count {
-            color: #2563eb;
-            font-weight: 900;
-            font-size: 1.1rem;
-        }
-
-        .detail-close-btn {
-            margin-top: 1.5rem;
-            padding: 0.8rem 2rem;
-            background: linear-gradient(135deg, #2563eb 0%, #1e40af 100%);
-            color: white;
-            border: none;
-            border-radius: 8px;
-            font-weight: 700;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            box-shadow: 0 2px 8px rgba(37, 99, 235, 0.3);
-        }
-
-        .detail-close-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(37, 99, 235, 0.4);
-        }
-
-        @media (max-width: 768px) {
-            .detail-table {
-                font-size: 0.9rem;
-            }
-
-            .detail-table th,
-            .detail-table td {
-                padding: 0.6rem 0.5rem;
-            }
-        }
-
-        @media (max-width: 768px) {
-            .equipment-grid-3 {
-                grid-template-columns: 1fr;
-            }
-
-            .equipment-image {
-                height: 180px;
-            }
-
-            .stat-box {
-                padding: 1rem 0.8rem;
-            }
-
-            .stat-value {
-                font-size: 1.4rem;
-            }
-        }
-
-        .product-category {
-            margin-bottom: 1.5rem;
-        }
-
-        .product-images-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .product-image-box {
-            background: white;
-            border-radius: 12px;
-            overflow: hidden;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .product-image-box:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 12px 24px rgba(37, 99, 235, 0.2);
-        }
-
-        .product-image-box img {
-            width: 100%;
-            height: 250px;
-            object-fit: cover;
-            display: block;
-        }
-
-        .product-images-grid-4 {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        @media (max-width: 768px) {
             .product-images-grid {
                 grid-template-columns: 1fr;
                 gap: 1.5rem;
@@ -1753,53 +1507,63 @@
 
             .certifications-grid-4 {
                 grid-template-columns: 1fr;
-                gap: 1.5rem;
-                max-width: 100%;
+                gap: 1rem;
+            }
+
+            .certification-card {
+                margin-bottom: 0.5rem;
+            }
+
+            .certification-header {
+                padding: 0.8rem;
+            }
+
+            .certification-title {
+                font-size: 0.95rem;
+            }
+
+            .certification-subtitle-text {
+                font-size: 0.75rem;
             }
 
             .certification-image {
                 height: 150px;
             }
 
-            .certification-header {
+            .certification-content-simple {
                 padding: 1rem;
+                gap: 0.8rem;
             }
 
-            .certification-title {
-                font-size: 1rem;
-            }
-
-            .certification-subtitle-text {
+            .detail-table {
                 font-size: 0.8rem;
             }
+
+            .detail-table th,
+            .detail-table td {
+                padding: 0.5rem 0.3rem;
+            }
+
+            .contact-form input,
+            .contact-form textarea {
+                padding: 0.6rem;
+                font-size: 0.9rem;
+            }
+
+            footer {
+                padding: 1.5rem 1rem;
+            }
+
+            .footer-links {
+                gap: 1rem;
+                margin-bottom: 1rem;
+            }
+
+            .footer-links a {
+                font-size: 0.85rem;
+            }
         }
-        /* ===== ✅ 모든 이미지 자동 최적화 ===== */
-img {
-    max-width: 100%;
-    height: auto;
-    display: block;
-}
 
-.equipment-image,
-.service-image,
-.product-image-box,
-.certification-image {
-    width: 100%;
-    height: auto;
-    overflow: visible;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.equipment-image img,
-.service-image img,
-.product-image-box img,
-.certification-image img {
-    width: 100%;
-    height: auto;
-    object-fit: contain;
-}
     </style>
 </head>
 <body>
@@ -1807,21 +1571,6 @@ img {
     <header>
         <nav>
             <div class="logo">
-                <div class="logo-icon">
-                    <div class="logo-top">
-                        <div class="logo-color red"></div>
-                        <div class="logo-color blue"></div>
-                        <div class="logo-color yellow"></div>
-                        <div class="logo-color red"></div>
-                        <div class="logo-color blue"></div>
-                    </div>
-                    <div class="logo-bottom">
-                        <div class="logo-color red"></div>
-                        <div class="logo-color blue"></div>
-                        <div class="logo-color red"></div>
-                        <div class="logo-color yellow"></div>
-                    </div>
-                </div>
                 <div class="logo-text">
                     <div class="logo-name">NTL</div>
                     <div class="logo-slogan">New Technology Leader</div>
@@ -1833,6 +1582,7 @@ img {
                 <li><a href="#services">서비스</a></li>
                 <li><a href="#equipment">장비</a></li>
                 <li><a href="#products">제품</a></li>
+                <li><a href="#organization">조직도</a></li>
                 <li><a href="#certifications">인증</a></li>
             </ul>
             <a href="#contact" class="nav-contact">문의</a>
@@ -1842,8 +1592,8 @@ img {
     <!-- Hero Section -->
     <section class="hero">
         <div class="hero-content">
-            <h1>혁신 기술로<br><span class="highlight">미래를 만드는</span> NTL</h1>
-            <p>정밀 산업용 부품과 장비의 글로벌 리더</p>
+            <h1 class="editable" id="hero-title">혁신 기술로<br><span class="highlight">미래를 만드는</span> NTL</h1>
+            <p class="editable" id="hero-subtitle">정밀 산업용 부품과 장비의 글로벌 리더</p>
             <a href="#contact" class="cta-button">문의하기</a>
         </div>
     </section>
@@ -1853,14 +1603,14 @@ img {
         <h2 class="section-title">회사소개</h2>
         <div class="about-content">
             <div class="about-text">
-                <h3>New Technology Leader</h3>
-                <p><strong>NTL</strong>은 2003년 설립되어 20년 이상의 경험을 바탕으로 정밀 산업용 부품과 검사 장비를 제조하는 전문 기업입니다. 최고의 품질과 혁신적인 기술로 글로벌 시장에서 신뢰받는 파트너가 되기 위해 노력하고 있습니다.</p>
-                <p style="margin-bottom: 1.5rem;">현재 40명 규모의 전문 인력과 최첨단 제조설비를 갖추고 있으며, 국내 주요 기업들(EUGENE TECH, APTC, APET)의 신뢰할 수 있는 협력사로 활동 중입니다.</p>
+                <h3 class="editable" id="about-title">New Technology Leader</h3>
+                <p class="editable" id="about-content-1"><strong>NTL</strong>은 2003년 설립되어 20년 이상의 경험을 바탕으로 정밀 산업용 부품과 검사 장비를 제조하는 전문 기업입니다. 최고의 품질과 혁신적인 기술로 글로벌 시장에서 신뢰받는 파트너가 되기 위해 노력하고 있습니다.</p>
+                <p class="editable" id="about-content-2" style="margin-bottom: 1.5rem;">현재 40명 규모의 전문 인력과 최첨단 제조설비를 갖추고 있으며, 국내 주요 기업들(EUGENE TECH, APTC, APET)의 신뢰할 수 있는 협력사로 활동 중입니다.</p>
                 <div class="about-features">
-                    <div class="feature-item"><span>2003년 NTL TECH 설립 (2005년 법인 전환)</span></div>
-                    <div class="feature-item"><span>ISO 9001 국제 표준 인증</span></div>
-                    <div class="feature-item"><span>클린룸 시스템 및 리이어빌리티 평가 라인 구축</span></div>
-                    <div class="feature-item"><span>스마트팩토리 및 2차 공장 확장</span></div>
+                    <div class="feature-item"><span class="editable" id="feature-1">2003년 NTL TECH 설립 (2005년 법인 전환)</span></div>
+                    <div class="feature-item"><span class="editable" id="feature-2">ISO 9001 국제 표준 인증</span></div>
+                    <div class="feature-item"><span class="editable" id="feature-3">클린룸 시스템 및 리이어빌리티 평가 라인 구축</span></div>
+                    <div class="feature-item"><span class="editable" id="feature-4">스마트팩토리 및 2차 공장 확장</span></div>
                 </div>
             </div>
         <div class="about-image">
@@ -1928,7 +1678,7 @@ img {
     <!-- Equipment Section -->
     <section id="equipment" class="equipment">
         <h2 class="section-title">주요 장비</h2>
-        <p style="text-align: center; color: #3d3d3a; margin-bottom: 4rem;">최첨단 기계 설비로 고품질 제품을 생산합니다</p>
+        <p style="text-align: center; color: #cccccc; margin-bottom: 4rem;">최첨단 기계 설비로 고품질 제품을 생산합니다</p>
         
         <!-- Equipment Category 1: Machining Center -->
         <div class="equipment-category">
@@ -1955,7 +1705,7 @@ img {
                             </div>
                         </div>
                         
-                        <!-- 정밀 머시닝 상세 테이블 (숨겨짐) -->
+                        <!-- 정밀 머시닝 상세 테이블 -->
                        <div class="machining-details" style="display: block; margin-top: 1rem;">
                             <table class="detail-table">
                                 <thead>
@@ -2135,11 +1885,11 @@ img {
     <!-- Products Section -->
     <section id="products" class="products">
         <h2 class="section-title">주요 제품</h2>
-        <p style="text-align: center; color: #3d3d3a; margin-bottom: 4rem;">알루미늄, 스테인레스 가공 부품 및 정밀 생산 아이템</p>
+        <p style="text-align: center; color: #cccccc; margin-bottom: 4rem;">알루미늄, 스테인레스 가공 부품 및 정밀 생산 아이템</p>
         
         <!-- Aluminum Products -->
         <div style="margin-bottom: 4rem;">
-            <h3 style="font-size: 1.8rem; font-weight: 800; color: #141413; text-align: center; margin-bottom: 1.5rem;">알루미늄 부품</h3>
+            <h3 style="font-size: 1.8rem; font-weight: 800; color: #ffffff; text-align: center; margin-bottom: 1.5rem;">알루미늄 부품</h3>
             
             <!-- CHAMBER -->
             <div class="product-category" style="margin-bottom: 1.5rem;">
@@ -2157,7 +1907,7 @@ img {
                         <img src="NTL26.jpg" alt="Chamber 3" >
                     </div>
                 </div>
-                <p style="text-align: center; color: #2563eb; margin-top: 1.5rem; font-weight: 600;">알루미늄 부품: Chamber, Showerhead 등 정밀 가공 부품</p>
+                <p style="text-align: center; color: #2563eb; margin-top: 1.5rem; font-weight: 700;">알루미늄 부품: Chamber, Showerhead 등 정밀 가공 부품</p>
             </div>
 
             <!-- SHOWER HEAD -->
@@ -2176,13 +1926,13 @@ img {
                         <img src="NTL13.jpg" alt="Shower Head 3" >
                     </div>
                 </div>
-                <p style="text-align: center; color: #2563eb; margin-top: 1.5rem; font-weight: 600;">정밀 가공 부품: 다양한 사이즈 및 스펙의 Shower Head</p>
+                <p style="text-align: center; color: #2563eb; margin-top: 1.5rem; font-weight: 700;">정밀 가공 부품: 다양한 사이즈 및 스펙의 Shower Head</p>
             </div>
         </div>
 
         <!-- Other Products -->
         <div style="margin-top: 4rem;">
-            <h3 style="font-size: 1.8rem; font-weight: 800; color: #141413; text-align: center; margin-bottom: 1.5rem;">기타 산업용 부품</h3>
+            <h3 style="font-size: 1.8rem; font-weight: 800; color: #ffffff; text-align: center; margin-bottom: 1.5rem;">기타 산업용 부품</h3>
             
             <!-- Welding Parts -->
             <div class="product-category" style="margin-bottom: 1.5rem;">
@@ -2200,7 +1950,7 @@ img {
                         <img src="NTL16.jpg" alt="Welding Parts 3">
                     </div>
                 </div>
-                <p style="text-align: center; color: #2563eb; margin-top: 1.5rem; font-weight: 600;">고정밀 용접 부품 및 특수 산업용 부품</p>
+                <p style="text-align: center; color: #2563eb; margin-top: 1.5rem; font-weight: 700;">고정밀 용접 부품 및 특수 산업용 부품</p>
             </div>
 
             <!-- Special Materials -->
@@ -2219,7 +1969,7 @@ img {
                         <img src="NTL29.jpg" alt="Special Materials 3" >
                     </div>
                 </div>
-                <p style="text-align: center; color: #2563eb; margin-top: 1.5rem; font-weight: 600;">스테인레스 및 다양한 특수 소재 가공 부품</p>
+                <p style="text-align: center; color: #2563eb; margin-top: 1.5rem; font-weight: 700;">스테인레스 및 다양한 특수 소재 가공 부품</p>
             </div>
         </div>
     </section>
@@ -2263,12 +2013,12 @@ img {
                 </div>
             </div>
 
-            <!-- Org Chart with SVG Lines -->
-            <div style="background: linear-gradient(135deg, #ffffff 0%, #f5f5f5 100%); padding: 3rem 2rem; border-radius: 12px; border: 2px solid #ddd; margin-bottom: 1.5rem; box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.05);">
-                <h2 class="section-title" style="color: #141413;">상세 조직도</h2>
+            <!-- Org Chart with Large Image -->
+            <div class="org-chart-container">
+                <h2 class="section-title" style="color: #ffffff;">상세 조직도</h2>
                 
-                <div style="display: flex; justify-content: center; margin-top: 3rem;">
-                    <img src="NTL18.jpg" alt="상세 조직도" >
+                <div style="display: flex; justify-content: center; margin-top: 2rem;">
+                    <img src="NTL18.jpg" alt="상세 조직도" style="width: 100%; max-width: 900px; height: auto;">
                 </div>
             </div>
 
@@ -2307,7 +2057,7 @@ img {
                 </div>
                 <div class="experience-info">
                     <p><strong>10년 이상 경력자:</strong> 10명 (25%)</p>
-                    <p style="margin-top: 0.5rem; font-size: 0.95rem; color: #64748b;">풍부한 경험과 전문 기술로 최고 수준의 제품을 보장합니다</p>
+                    <p style="margin-top: 0.3rem; font-size: 0.9rem; color: #888888;">풍부한 경험과 전문 기술로 최고 수준의 제품을 보장합니다</p>
                 </div>
             </div>
         </div>
@@ -2473,6 +2223,7 @@ img {
                 <a href="#">이용약관</a>
                 <a href="#">사이트맵</a>
                 <a href="#">LinkedIn</a>
+                <button id="editToggleBtn" class="edit-toggle-btn-small">✏️ 편집</button>
             </div>
             <p>&copy; 2003 NTL(New Technology Leader). All rights reserved.</p>
             <p style="margin-top: 1rem; font-size: 0.95rem;">주식회사 엔티엘 | 경기도 화성시 신리 304-6, 양감면 대양리 768</p>
@@ -2480,7 +2231,6 @@ img {
     </footer>
 
     <script>
-        // 정밀 머시닝 상세 정보 토글
         const machiningToggle = document.querySelector('.machining-details-toggle');
         const machiningDetails = document.querySelector('.machining-details');
         
@@ -2496,11 +2246,9 @@ img {
             });
         }
 
-        // Smooth scroll behavior
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 const href = this.getAttribute('href');
-                // '#'만 있는 경우는 무시
                 if (href === '#' || href === '') {
                     e.preventDefault();
                     return;
@@ -2509,21 +2257,83 @@ img {
                 const target = document.querySelector(href);
                 if (target) {
                     target.scrollIntoView({
-                        behavior: 'smooth',
+                        behavior: 'auto',
                         block: 'start'
                     });
                 }
             });
         });
 
-        // Form submission
+        // ===== 편집 모드 기능 =====
+        let editMode = false;
+        const editToggleBtn = document.getElementById('editToggleBtn');
+        const editableElements = document.querySelectorAll('.editable');
+
+        editToggleBtn.addEventListener('click', function() {
+            editMode = !editMode;
+            
+            if (editMode) {
+                editToggleBtn.textContent = '💾 저장';
+                editToggleBtn.classList.add('active');
+                enableEditMode();
+            } else {
+                editToggleBtn.textContent = '✏️ 편집';
+                editToggleBtn.classList.remove('active');
+                disableEditMode();
+                saveChanges();
+            }
+        });
+
+        function enableEditMode() {
+            editableElements.forEach(el => {
+                el.contentEditable = 'true';
+                el.classList.add('edit-mode');
+            });
+        }
+
+        function disableEditMode() {
+            editableElements.forEach(el => {
+                el.contentEditable = 'false';
+                el.classList.remove('edit-mode');
+            });
+        }
+
+        function saveChanges() {
+            const changes = {};
+            editableElements.forEach((el, index) => {
+                if (el.id) {
+                    changes[el.id] = el.innerHTML;
+                }
+            });
+            localStorage.setItem('websiteChanges', JSON.stringify(changes));
+            alert('✅ 변경사항이 저장되었습니다!');
+        }
+
+        function loadChanges() {
+            const saved = localStorage.getItem('websiteChanges');
+            if (saved) {
+                try {
+                    const changes = JSON.parse(saved);
+                    editableElements.forEach(el => {
+                        if (el.id && changes[el.id]) {
+                            el.innerHTML = changes[el.id];
+                        }
+                    });
+                } catch (e) {
+                    console.log('저장된 변경사항 로드 실패');
+                }
+            }
+        }
+
+        // 페이지 로드 시 저장된 변경사항 복원
+        window.addEventListener('load', loadChanges);
+
         document.querySelector('.contact-form').addEventListener('submit', function(e) {
             e.preventDefault();
             alert('문의가 제출되었습니다. 빠른 시간 내에 연락드리겠습니다.');
             this.reset();
         });
 
-        // Image lazy loading
         document.querySelectorAll('img').forEach(img => {
             img.addEventListener('load', function() {
                 this.style.opacity = '1';
