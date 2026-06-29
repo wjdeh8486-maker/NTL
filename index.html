@@ -21,6 +21,9 @@
             color: #ffffff;
             line-height: 1.6;
         }
+        .menu-toggle {
+    display: none;
+}
 
         /* ===== Header & Navigation ===== */
         header {
@@ -1736,7 +1739,52 @@
                 font-size: 1.2rem;
             }
         }
+/* ===== 모바일 UX 개선 ===== */
+@media (max-width: 768px) {
 
+    nav {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .menu-toggle {
+        display: block;
+        font-size: 1.8rem;
+        cursor: pointer;
+    }
+
+    .nav-menu {
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        background: #1a1a1a;
+        flex-direction: column;
+        align-items: center;
+        gap: 1.2rem;
+        padding: 1.5rem 0;
+        display: none;
+        z-index: 999;
+    }
+
+    .nav-menu.active {
+        display: flex;
+    }
+
+    .nav-contact {
+        display: none;
+    }
+
+    .hero::before {
+        background-attachment: scroll !important;
+    }
+
+    .cta-button,
+    .contact-form button {
+        width: 100%;
+    }
+}
     </style>
 </head>
 <body>
@@ -1749,6 +1797,7 @@
                     <div class="logo-slogan">New Technology Leader</div>
                 </div>
             </div>
+            <div class="menu-toggle">☰</div>
             <ul class="nav-menu">
                 <li><a href="#about">회사소개</a></li>
                 <li><a href="#philosophy">경영철학</a></li>
@@ -2487,6 +2536,21 @@
                 this.style.opacity = '1';
             });
         });
+        // 햄버거 메뉴
+const toggle = document.querySelector('.menu-toggle');
+const menu = document.querySelector('.nav-menu');
+
+toggle.addEventListener('click', () => {
+    menu.classList.toggle('active');
+});
+
+// 메뉴 누르면 자동 닫힘
+document.querySelectorAll('.nav-menu a').forEach(link => {
+    link.addEventListener('click', () => {
+        menu.classList.remove('active');
+    });
+});
+
     </script>
 </body>
 </html>
