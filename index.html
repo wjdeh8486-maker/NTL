@@ -196,7 +196,6 @@
             z-index: 10;
             text-align: center;
             max-width: 800px;
-            
         }
 
         .hero h1 {
@@ -259,12 +258,12 @@
             display: none;
         }
 
-        section.visible {
-            display: unset !important;
+        .hero {
+            display: flex !important;
         }
 
-        .hero.visible {
-            display: flex !important;
+        section.visible {
+            display: block !important;
         }
 
         .about.visible {
@@ -279,6 +278,10 @@
             display: flex !important;
         }
 
+        .certifications.visible {
+            display: flex !important;
+        }
+
         .equipment.visible {
             display: block !important;
         }
@@ -289,10 +292,6 @@
 
         .organization.visible {
             display: block !important;
-        }
-
-        .certifications.visible {
-            display: flex !important;
         }
 
         .contact.visible {
@@ -1638,7 +1637,7 @@
     </header>
 
     <!-- Hero Section -->
-    <section id="hero" class="hero visible">
+    <section id="hero" class="hero">
         <div class="hero-content">
             <h1 id="hero-title">혁신 기술로<br><span class="highlight">미래를 만드는</span> NTL</h1>
             <p id="hero-subtitle">정밀 산업용 부품과 장비의 글로벌 리더</p>
@@ -2311,19 +2310,20 @@
             });
         });
 
-        // ===== 탭 + 슬라이드 하이브리드 네비게이션 =====
-        // 모든 주요 섹션
+        // ===== 탭식 네비게이션 =====
         const allSections = [
             'hero', 'about', 'philosophy', 'services', 'equipment', 
             'products', 'organization', 'certifications', 'contact'
         ];
 
-        // 모든 섹션 숨김
+        // 모든 섹션 숨김 (Hero 제외)
         function hideAllSections() {
             allSections.forEach(sectionId => {
-                const section = document.getElementById(sectionId);
-                if (section) {
-                    section.classList.remove('visible');
+                if (sectionId !== 'hero') {
+                    const section = document.getElementById(sectionId);
+                    if (section) {
+                        section.classList.remove('visible');
+                    }
                 }
             });
         }
@@ -2335,9 +2335,10 @@
             if (section) {
                 section.classList.add('visible');
             }
+            window.scrollTo(0, 0);
         }
 
-        // 네비게이션 링크 클릭 이벤트 - 탭 방식
+        // 네비게이션 링크 클릭 이벤트
         document.querySelectorAll('.nav-menu a').forEach(link => {
             link.addEventListener('click', function(e) {
                 const href = this.getAttribute('href');
@@ -2345,7 +2346,6 @@
                     e.preventDefault();
                     const sectionId = href.substring(1);
                     showSection(sectionId);
-                    window.scrollTo(0, 0);
                 }
             });
         });
@@ -2353,13 +2353,19 @@
         // 로고 클릭 시 Hero 표시
         document.querySelector('.logo').addEventListener('click', function(e) {
             e.preventDefault();
-            showSection('hero');
             window.scrollTo(0, 0);
         });
 
-        // 페이지 준비 완료시 초기화
-        document.addEventListener('DOMContentLoaded', function() {
-            // Hero는 이미 HTML에서 visible 클래스로 설정됨
+        // 문의하기 버튼 클릭 시
+        document.querySelectorAll('.cta-button').forEach(button => {
+            button.addEventListener('click', function(e) {
+                const href = this.getAttribute('href');
+                if (href && href.startsWith('#')) {
+                    e.preventDefault();
+                    const sectionId = href.substring(1);
+                    showSection(sectionId);
+                }
+            });
         });
 
         document.querySelector('.contact-form').addEventListener('submit', function(e) {
