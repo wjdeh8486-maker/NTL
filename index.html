@@ -260,7 +260,43 @@
         }
 
         section.visible {
-            display: revert;  /* 원래 display 속성으로 복구 */
+            display: unset !important;
+        }
+
+        .hero.visible {
+            display: flex !important;
+        }
+
+        .about.visible {
+            display: flex !important;
+        }
+
+        .philosophy.visible {
+            display: flex !important;
+        }
+
+        .services.visible {
+            display: flex !important;
+        }
+
+        .equipment.visible {
+            display: block !important;
+        }
+
+        .products.visible {
+            display: block !important;
+        }
+
+        .organization.visible {
+            display: block !important;
+        }
+
+        .certifications.visible {
+            display: flex !important;
+        }
+
+        .contact.visible {
+            display: block !important;
         }
 
         .section-title {
@@ -1602,7 +1638,7 @@
     </header>
 
     <!-- Hero Section -->
-    <section class="hero">
+    <section id="hero" class="hero visible">
         <div class="hero-content">
             <h1 id="hero-title">혁신 기술로<br><span class="highlight">미래를 만드는</span> NTL</h1>
             <p id="hero-subtitle">정밀 산업용 부품과 장비의 글로벌 리더</p>
@@ -2321,9 +2357,9 @@
             window.scrollTo(0, 0);
         });
 
-        // 페이지 로드 시 Hero 표시
-        window.addEventListener('load', function() {
-            showSection('hero');
+        // 페이지 준비 완료시 초기화
+        document.addEventListener('DOMContentLoaded', function() {
+            // Hero는 이미 HTML에서 visible 클래스로 설정됨
         });
 
         document.querySelector('.contact-form').addEventListener('submit', function(e) {
