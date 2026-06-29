@@ -195,14 +195,6 @@
         }
 
         /* ===== Tab Navigation ===== */
-        .tab-hidden {
-            display: none !important;
-        }
-
-        .tab-visible {
-            display: flex !important;
-        }
-
         /* ===== Hero Section ===== */
         .hero {
             position: relative;
@@ -339,7 +331,7 @@
             position: relative;
             z-index: 100;
             margin: 0;
-            min-height: auto;
+            min-height: 100vh;
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -417,7 +409,7 @@
             position: relative;
             z-index: 100;
             background: #1a1a1a;
-            min-height: auto;
+            min-height: 100vh;
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -2375,76 +2367,19 @@
         // 페이지 로드 시 저장된 변경사항 복원
         window.addEventListener('load', loadChanges);
 
-        // ===== 탭 네비게이션 기능 =====
-        const tabSections = {
-            'about': document.getElementById('about'),
-            'philosophy': document.getElementById('philosophy'),
-            'services': document.getElementById('services'),
-            'equipment': document.getElementById('equipment'),
-            'products': document.getElementById('products'),
-            'organization': document.getElementById('organization'),
-            'certifications': document.getElementById('certifications'),
-            'contact': document.getElementById('contact')
-        };
-
-        // 모든 탭 섹션 초기화 (숨김)
-        function initializeTabs() {
-            Object.values(tabSections).forEach(section => {
-                if (section) {
-                    section.classList.add('tab-hidden');
-                    section.classList.remove('tab-visible');
-                }
-            });
-        }
-
-        // 특정 탭만 표시
-        function showTab(tabName) {
-            // 모든 탭 숨김
-            Object.values(tabSections).forEach(section => {
-                if (section) {
-                    section.classList.add('tab-hidden');
-                    section.classList.remove('tab-visible');
-                }
-            });
-
-            // 선택된 탭만 표시
-            if (tabSections[tabName]) {
-                tabSections[tabName].classList.remove('tab-hidden');
-                tabSections[tabName].classList.add('tab-visible');
-                window.scrollTo(0, 0);
-            }
-        }
-
-        // 네비게이션 링크에 클릭 이벤트 추가
+        // ===== 기본 스크롤 네비게이션 복구 =====
+        // 탭 네비게이션 제거 - 기본 앵커 방식 사용
         document.querySelectorAll('.nav-menu a').forEach(link => {
             link.addEventListener('click', function(e) {
                 const href = this.getAttribute('href');
                 if (href && href.startsWith('#')) {
-                    e.preventDefault();
-                    const tabName = href.substring(1);
-                    showTab(tabName);
+                    const element = document.getElementById(href.substring(1));
+                    if (element) {
+                        element.scrollIntoView({ behavior: 'smooth' });
+                    }
                 }
             });
         });
-
-        // 페이지 로드 시 탭 초기화 (Hero 섹션만 표시)
-        window.addEventListener('load', function() {
-            initializeTabs();
-            // 모든 섹션 숨김 (처음엔 아무것도 보이지 않음)
-        });
-
-        // 로고 클릭 시 Hero 섹션 표시
-        document.querySelector('.logo').addEventListener('click', function(e) {
-            e.preventDefault();
-            showTab('hero');
-        });
-
-        // Hero 섹션을 tabSections에 추가
-        const heroSection = document.querySelector('.hero');
-        if (heroSection) {
-            heroSection.id = 'hero';
-            tabSections['hero'] = heroSection;
-        }
 
         document.querySelector('.contact-form').addEventListener('submit', function(e) {
             e.preventDefault();
